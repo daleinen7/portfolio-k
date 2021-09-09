@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import Audio from './components/Audio'
-import Software from './components/Software'
+import Audio from './Audio'
+import Software from './Software'
+
+import styled from 'styled-components'
+
+const Container = styled.div`
+  background: #181818;
+`
 
 export default function App() {
   return (
-    <>
+    <Container>
       <header>
-        <h1>Hi. I'm Doug.</h1>
+        <h1>
+          <span className="green">Hi. I'm</span> Doug.
+        </h1>
         <p role="doc-subtitle">Software Developer, Audio Nerd</p>
       </header>
       <nav>
@@ -25,6 +33,6 @@ export default function App() {
           <Software />
         </Route>
       </Switch>
-    </>
+    </Container>
   )
 }
