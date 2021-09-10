@@ -5,6 +5,12 @@ const StyledList = styled.ul`
   list-style-type: none;
 `
 
+const StyledAbout = styled.section`
+  p {
+    font-size: 2.25rem;
+  }
+`
+
 const projects = [
   {
     title: 'Candy Fluffs',
@@ -45,16 +51,28 @@ export default function Software() {
       <section>
         <h2 className="green">Development Tools.</h2>
       </section>
-      <section>
+      <StyledAbout>
         <h2 className={'visually-hidden'}>About Me.</h2>
-        <p>
+        <p className="green">
           I am a software engineer with an obsession to meld the rigid logic of
           programming and the boundless possibilities of art and ideas. I love
           how form and function combine to improve our lives to make information
           and tools clearer and more accessible. I love the process of turning
           the intangible into reality through technology.
         </p>
-      </section>
+      </StyledAbout>
+
+      <ul>
+        <li>
+          <a href="https://www.dougleinen.com/Doug_Leinen-Resume.pdf">Resume</a>
+        </li>
+        <li>
+          <a href="https://github.com/daleinen7">GitHub</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/doug-leinen/">LinkedIn</a>
+        </li>
+      </ul>
     </>
   )
 }

@@ -10,18 +10,21 @@ const ProjectContainer = styled.article`
     margin: 0 0 0 3.75rem;
   }
 
-  h2 {
+  h3 {
     font-size: 4rem;
     margin: 0 0 1rem 0;
   }
 
   p {
     font-size: 2.25rem;
+    font-weight: 400;
     margin: 1.5rem 0 0.75rem 0;
+    color: var(--pale-green);
   }
 
   a {
     font-size: 2.25rem;
+    font-weight: 500;
   }
 
   img {
@@ -37,7 +40,7 @@ const ProjectContainer = styled.article`
         margin: 0 3.75rem 0 0;
       }
 
-      h2 {
+      h3 {
         text-align: right;
       }
       p {
@@ -53,7 +56,7 @@ export default function Project({ title, description, idx }) {
   return (
     <ProjectContainer idx={idx}>
       <div className="info">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p className="green">{description}</p>
         <a href={'github.com'} className="green">
           {' '}

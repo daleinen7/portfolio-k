@@ -2,6 +2,7 @@
 
 :root {
   --green: #cef988;
+  --pale-green: #b0c88a;
 }
 
 .visually-hidden {
@@ -26,6 +27,11 @@ h3,
 h4 {
   font-family: 'Roboto Slab', serif;
   color: white;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 p {
