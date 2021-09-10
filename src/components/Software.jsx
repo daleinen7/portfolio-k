@@ -1,4 +1,9 @@
 import Project from './Project'
+import styled from 'styled-components'
+
+const StyledList = styled.ul`
+  list-style-type: none;
+`
 
 const projects = [
   {
@@ -23,24 +28,25 @@ export default function Software() {
     <>
       <section>
         <h2 className="visually-hidden">Projects</h2>
-        <ul>
-          {projects.map((project) => {
+        <StyledList>
+          {projects.map((project, idx) => {
             return (
-              <li>
+              <li key={project.title}>
                 <Project
                   title={project.title}
                   description={project.description}
+                  idx={idx}
                 />
               </li>
             )
           })}
-        </ul>
+        </StyledList>
       </section>
       <section>
         <h2 className="green">Development Tools.</h2>
       </section>
       <section>
-        <h2 className={'vissually-hidden'}>About Me.</h2>
+        <h2 className={'visually-hidden'}>About Me.</h2>
         <p>
           I am a software engineer with an obsession to meld the rigid logic of
           programming and the boundless possibilities of art and ideas. I love

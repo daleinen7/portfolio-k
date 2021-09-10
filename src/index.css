@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@400;700&display=swap');
 
+:root {
+  --green: #cef988;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -13,6 +17,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: #181818;
 }
 
 h1,
@@ -28,6 +33,10 @@ p {
   color: white;
 }
 
+a {
+  font-family: 'Roboto Slab', serif;
+}
+
 .green {
-  color: #cef988;
+  color: var(--green);
 }
