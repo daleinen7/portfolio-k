@@ -1,13 +1,74 @@
 import Project from './Project'
 import styled from 'styled-components'
+import {
+  DiGithubBadge,
+  DiCss3,
+  DiHeroku,
+  DiDjango,
+  DiHtml5,
+  DiJsBadge,
+  DiLinux,
+  DiMarkdown,
+  DiMongodb,
+  DiNodejsSmall,
+  DiMysql,
+  DiNpm,
+  DiPython,
+  DiPhotoshop,
+  DiPhp,
+  DiPostgresql,
+  DiRor,
+  DiSass,
+} from 'react-icons/di'
 
-const StyledList = styled.ul`
+import { IoAccessibilitySharp } from 'react-icons/io5'
+
+import { GrGatsbyjs } from 'react-icons/gr'
+
+import { SiNextDotJs, SiNetlify } from 'react-icons/si'
+
+const StyledProjectsList = styled.ul`
   list-style-type: none;
+`
+
+const StyledLinksList = styled.ul`
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+
+  a {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: var(--green);
+    margin: 2rem 4rem;
+    padding: 1rem;
+  }
 `
 
 const StyledAbout = styled.section`
   p {
     font-size: 2.25rem;
+  }
+`
+const StyledTools = styled.section`
+  color: white;
+
+  h2 {
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 100%;
+  }
+  li {
+    font-size: 4rem;
+    padding-left: 2rem;
   }
 `
 
@@ -34,7 +95,7 @@ export default function Software() {
     <>
       <section>
         <h2 className="visually-hidden">Projects</h2>
-        <StyledList>
+        <StyledProjectsList>
           {projects.map((project, idx) => {
             return (
               <li key={project.title}>
@@ -46,11 +107,43 @@ export default function Software() {
               </li>
             )
           })}
-        </StyledList>
+        </StyledProjectsList>
       </section>
-      <section>
+      <StyledTools>
         <h2 className="green">Development Tools.</h2>
-      </section>
+        <ul>
+          <li>
+            <DiSass />
+          </li>
+          <li>
+            <IoAccessibilitySharp />
+          </li>
+          <li>
+            <GrGatsbyjs />
+          </li>
+          <li>
+            <DiMongodb />
+          </li>
+          <li>
+            <DiMarkdown />
+          </li>
+          <li>
+            <DiHeroku />
+          </li>
+          <li>
+            <DiCss3 />
+          </li>
+          <li>
+            <DiJsBadge />
+          </li>
+          <li>
+            <DiPostgresql />
+          </li>
+          <li>
+            <SiNetlify />
+          </li>
+        </ul>
+      </StyledTools>
       <StyledAbout>
         <h2 className={'visually-hidden'}>About Me.</h2>
         <p className="green">
@@ -62,7 +155,7 @@ export default function Software() {
         </p>
       </StyledAbout>
 
-      <ul>
+      <StyledLinksList>
         <li>
           <a href="https://www.dougleinen.com/Doug_Leinen-Resume.pdf">Resume</a>
         </li>
@@ -72,7 +165,7 @@ export default function Software() {
         <li>
           <a href="https://www.linkedin.com/in/doug-leinen/">LinkedIn</a>
         </li>
-      </ul>
+      </StyledLinksList>
     </>
   )
 }
