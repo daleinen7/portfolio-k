@@ -64,7 +64,7 @@ const StyledTools = styled.section`
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
   }
   li {
@@ -92,73 +92,29 @@ const projects = [
 ]
 
 const skills = [
-  <li>
-    <DiGithubBadge />
-  </li>,
-  <li>
-    <DiCss3 />
-  </li>,
-  <li>
-    <DiHeroku />
-  </li>,
-  <li>
-    <DiDjango />
-  </li>,
-  <li>
-    <DiHtml5 />
-  </li>,
-  <li>
-    <DiJsBadge />
-  </li>,
-  <li>
-    <DiLinux />
-  </li>,
-  <li>
-    <DiMarkdown />
-  </li>,
-  <li>
-    <DiMongodb />
-  </li>,
-  <li>
-    <DiNodejsSmall />
-  </li>,
-  <li>
-    <DiMysql />
-  </li>,
-  <li>
-    <DiNpm />
-  </li>,
-  <li>
-    <DiPython />
-  </li>,
-  <li>
-    <DiPhotoshop />
-  </li>,
-  <li>
-    <DiPhp />
-  </li>,
-  <li>
-    <DiPostgresql />
-  </li>,
-  <li>
-    <DiRor />
-  </li>,
-  <li>
-    <DiSass />
-  </li>,
-  <li>
-    <IoAccessibilitySharp />
-  </li>,
-  <li>
-    <GrGatsbyjs />
-  </li>,
-  <li>
-    <SiNextDotJs />
-  </li>,
-  <li>
-    <SiNetlify />
-  </li>,
-]
+  <DiGithubBadge />,
+  <DiCss3 />,
+  <DiHeroku />,
+  <DiDjango />,
+  <DiHtml5 />,
+  <DiJsBadge />,
+  <DiLinux />,
+  <DiMarkdown />,
+  <DiMongodb />,
+  <DiNodejsSmall />,
+  <DiMysql />,
+  <DiNpm />,
+  <DiPython />,
+  <DiPhotoshop />,
+  <DiPhp />,
+  <DiPostgresql />,
+  <DiRor />,
+  <DiSass />,
+  <IoAccessibilitySharp />,
+  <GrGatsbyjs />,
+  <SiNextDotJs />,
+  <SiNetlify />,
+].map((skill, idx) => <li key={idx}>{skill}</li>)
 
 export default function Software() {
   return (
