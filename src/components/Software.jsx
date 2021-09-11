@@ -1,5 +1,6 @@
 import Project from './Project'
 import styled from 'styled-components'
+
 import {
   DiGithubBadge,
   DiCss3,
@@ -90,6 +91,75 @@ const projects = [
   },
 ]
 
+const skills = [
+  <li>
+    <DiGithubBadge />
+  </li>,
+  <li>
+    <DiCss3 />
+  </li>,
+  <li>
+    <DiHeroku />
+  </li>,
+  <li>
+    <DiDjango />
+  </li>,
+  <li>
+    <DiHtml5 />
+  </li>,
+  <li>
+    <DiJsBadge />
+  </li>,
+  <li>
+    <DiLinux />
+  </li>,
+  <li>
+    <DiMarkdown />
+  </li>,
+  <li>
+    <DiMongodb />
+  </li>,
+  <li>
+    <DiNodejsSmall />
+  </li>,
+  <li>
+    <DiMysql />
+  </li>,
+  <li>
+    <DiNpm />
+  </li>,
+  <li>
+    <DiPython />
+  </li>,
+  <li>
+    <DiPhotoshop />
+  </li>,
+  <li>
+    <DiPhp />
+  </li>,
+  <li>
+    <DiPostgresql />
+  </li>,
+  <li>
+    <DiRor />
+  </li>,
+  <li>
+    <DiSass />
+  </li>,
+  <li>
+    <IoAccessibilitySharp />
+  </li>,
+  <li>
+    <GrGatsbyjs />
+  </li>,
+  <li>
+    <SiNextDotJs />
+  </li>,
+  <li>
+    <SiNetlify />
+  </li>,
+]
+
 export default function Software() {
   return (
     <>
@@ -111,38 +181,7 @@ export default function Software() {
       </section>
       <StyledTools>
         <h2 className="green">Development Tools.</h2>
-        <ul>
-          <li>
-            <DiSass />
-          </li>
-          <li>
-            <IoAccessibilitySharp />
-          </li>
-          <li>
-            <GrGatsbyjs />
-          </li>
-          <li>
-            <DiMongodb />
-          </li>
-          <li>
-            <DiMarkdown />
-          </li>
-          <li>
-            <DiHeroku />
-          </li>
-          <li>
-            <DiCss3 />
-          </li>
-          <li>
-            <DiJsBadge />
-          </li>
-          <li>
-            <DiPostgresql />
-          </li>
-          <li>
-            <SiNetlify />
-          </li>
-        </ul>
+        <ul>{skills}</ul>
       </StyledTools>
       <StyledAbout>
         <h2 className={'visually-hidden'}>About Me.</h2>

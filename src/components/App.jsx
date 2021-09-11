@@ -1,4 +1,4 @@
-import { Link, Switch, Route } from 'react-router-dom'
+import { NavLink, Switch, Route } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
 
@@ -39,6 +39,9 @@ const Nav = styled.nav`
       color: var(--green);
     }
   }
+  .selected {
+    color: var(--pale-green);
+  }
 `
 
 export default function App() {
@@ -51,8 +54,12 @@ export default function App() {
         <p role="doc-subtitle">Software Developer, Audio Nerd</p>
       </Header>
       <Nav>
-        <Link to="/software">Software Stuff</Link>
-        <Link to="/audio">Audio Stuff</Link>
+        <NavLink to="/software" activeClassName="selected">
+          Software Stuff
+        </NavLink>
+        <NavLink to="/audio" activeClassName="selected">
+          Audio Stuff
+        </NavLink>
       </Nav>
       <Switch>
         <Route path="/software">
