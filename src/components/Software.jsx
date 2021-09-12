@@ -119,8 +119,9 @@ const skills = [
 export default function Software() {
   return (
     <>
+      <h2 className="visually-hidden">Software Engineer</h2>
       <section>
-        <h2 className="visually-hidden">Projects</h2>
+        <h3 className="visually-hidden">Projects</h3>
         <StyledProjectsList>
           {projects.map((project, idx) => {
             return (
@@ -136,11 +137,11 @@ export default function Software() {
         </StyledProjectsList>
       </section>
       <StyledTools>
-        <h2 className="green">Development Tools.</h2>
+        <h3 className="green">Development Tools.</h3>
         <ul>{skills}</ul>
       </StyledTools>
       <StyledAbout>
-        <h2 className={'visually-hidden'}>About Me.</h2>
+        <h3 className={'visually-hidden'}>About Me.</h3>
         <p className="green">
           I am a software engineer with an obsession to meld the rigid logic of
           programming and the boundless possibilities of art and ideas. I love

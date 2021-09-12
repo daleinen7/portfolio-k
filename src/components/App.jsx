@@ -1,4 +1,4 @@
-import { NavLink, Switch, Route } from 'react-router-dom'
+import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
 
@@ -69,7 +69,7 @@ export default function App() {
           <Audio />
         </Route>
         <Route path="/">
-          <Software />
+          <Redirect to="/software" />
         </Route>
       </Switch>
     </Container>
