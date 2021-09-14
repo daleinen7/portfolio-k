@@ -65,6 +65,7 @@ export default function Audio() {
             <article key={idx}>
               <h4>{project.artist}</h4>
               <p>{project.description}</p>
+              <AudioExamples />
             </article>
           )
         })}
