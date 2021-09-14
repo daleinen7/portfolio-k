@@ -72,8 +72,10 @@ export default function Audio() {
       <StyledSection>
         <h3>Why I do what I do</h3>
         <p>
-          Waking up is agony. Sleeping in is pain. Conciousness is still a young
-          man's game.
+          I've always felt most comfortable in the place where art and science
+          and technology converge. Whether it's Audio engineering, Picture
+          Framing or Software Engineering, I enjoy discovering the the best way
+          to make art tangible.
         </p>
       </StyledSection>
     </>
