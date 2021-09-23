@@ -21,6 +21,10 @@ const Header = styled.header`
     margin: 0;
   }
 
+  .DOUG {
+    font-weight: 700;
+  }
+
   p {
     font-size: 3rem;
     margin: 0;
@@ -34,13 +38,14 @@ const Nav = styled.nav`
   margin: 3rem 0;
   a {
     font-family: 'Roboto Slab', serif;
-    color: white;
+    color: var(--pale-green);
     &:hover {
+      font-style: italic;
       color: var(--green);
     }
   }
   .selected {
-    color: var(--pale-green);
+    color: white;
   }
 `
 
@@ -49,7 +54,7 @@ export default function App() {
     <Container>
       <Header>
         <h1>
-          <span className="green">Hi. I'm</span> Doug.
+          <span className="green">Hi. I'm</span> <span className="DOUG">Doug.</span>  
         </h1>
         <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
       </Header>

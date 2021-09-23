@@ -30,6 +30,7 @@ import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
 const StyledProjectsList = styled.ul`
   list-style-type: none;
+  padding: 0;
 `
 
 const StyledLinksList = styled.ul`
@@ -61,6 +62,7 @@ const StyledTools = styled.section`
 
   h2, h3 {
     text-align: center;
+    margin: 2rem;
   }
 
   ul {
@@ -68,9 +70,12 @@ const StyledTools = styled.section`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
     list-style-type: none;
     justify-content: center;
     width: 100%;
+    height: 10em;
   }
   li {
     font-size: 4rem;
@@ -81,43 +86,46 @@ const StyledTools = styled.section`
 const projects = [
   {
     title: 'Candy Fluffs',
+    site: 'https://candyfluffs.com',
     description:
       'My client needed an affordable, quick, and easy solution. Gatsby and Jamstack delivered on all counts and more.',
   },
   {
     title: 'Bearcabulary',
+    site: 'https://bearcabulary.com',
     description:
       'Originally built in a 3 day hack-a-thon, some of the team re-imagined the project in Gatsby and NetlifyCMS to be open source and extensible.',
   },
   {
     title: 'Weird Radio',
+    site: 'https://weirdradio.netlify.app',
     description:
-      'Internet radio designed promoting experimental music from the West Coast.',
+      'Internet radio designed promoting experimental music from the West Coast. A project where I have full control of the tech side and collaborate with two designers to bring the product to reality. Currently a work in progress.',
   },
 ]
 
 const skills = [
   <DiGithubBadge />,
   <DiCss3 />,
-  <DiHeroku />,
-  <DiDjango />,
+  // <DiHeroku />,
+  // <DiDjango />,
   <DiHtml5 />,
   <DiJsBadge />,
-  <DiLinux />,
-  <DiMarkdown />,
+  // <DiLinux />,
+  // <DiMarkdown />,
   <DiMongodb />,
   <DiNodejsSmall />,
-  <DiMysql />,
+  // <DiMysql />,
   <DiNpm />,
-  <DiPython />,
-  <DiPhotoshop />,
-  <DiPhp />,
+  // <DiPython />,
+  // <DiPhotoshop />,
+  // <DiPhp />,
   <DiPostgresql />,
-  <DiRor />,
+  // <DiRor />,
   <DiSass />,
   <IoAccessibilitySharp />,
   <GrGatsbyjs />,
-  <SiNextDotJs />,
+  // <SiNextDotJs />,
   <SiNetlify />,
 ].map((skill, idx) => <li key={idx}>{skill}</li>)
 
@@ -135,6 +143,7 @@ export default function Software() {
                   title={project.title}
                   description={project.description}
                   idx={idx}
+                  site={project.site}
                 />
               </li>
             )

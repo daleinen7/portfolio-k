@@ -55,13 +55,13 @@ const ProjectContainer = styled.article`
       }
     `}
 `
-export default function Project({ title, description, idx }) {
+export default function Project({ title, description, idx, site }) {
   return (
     <ProjectContainer idx={idx}>
       <div className="info">
         <h4>{title}</h4>
         <p className="green">{description}</p>
-        <a href={'github.com'} className="green">
+        <a href={site} className="green">
           {' '}
           Check it out &rarr;
         </a>
