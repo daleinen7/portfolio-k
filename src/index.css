@@ -29,12 +29,7 @@ h4 {
   color: white;
 }
 
-h2 {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-h3 {
+h2, h3 {
   color: var(--green);
   font-size: 4rem;
   font-weight: 700;

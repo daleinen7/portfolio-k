@@ -51,7 +51,7 @@ export default function App() {
         <h1>
           <span className="green">Hi. I'm</span> Doug.
         </h1>
-        <p role="doc-subtitle">Software Developer, Audio Nerd</p>
+        <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
       </Header>
       <Nav>
         <NavLink to="/software" activeClassName="selected">

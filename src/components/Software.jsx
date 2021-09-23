@@ -40,21 +40,26 @@ const StyledLinksList = styled.ul`
   a {
     font-size: 2.25rem;
     font-weight: 500;
-    color: var(--green);
+    color: var(--pale-green);
     margin: 2rem 4rem;
     padding: 1rem;
+    text-decoration: underline;
+    &:hover {
+      color: var(--green);
+      font-style: italic;
+    }
   }
 `
 
 const StyledAbout = styled.section`
   p {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
   }
 `
 const StyledTools = styled.section`
   color: white;
 
-  h2 {
+  h2, h3 {
     text-align: center;
   }
 

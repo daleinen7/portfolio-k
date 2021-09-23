@@ -11,12 +11,12 @@ const ProjectContainer = styled.article`
   }
 
   h4 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 0 0 1rem 0;
   }
 
   p {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin: 1.5rem 0 0.75rem 0;
     color: var(--pale-green);
