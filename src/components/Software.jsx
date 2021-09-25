@@ -4,21 +4,21 @@ import styled from 'styled-components'
 import {
   DiGithubBadge,
   DiCss3,
-  DiHeroku,
-  DiDjango,
+  // DiHeroku,
+  // DiDjango,
   DiHtml5,
   DiJsBadge,
-  DiLinux,
-  DiMarkdown,
+  // DiLinux,
+  // DiMarkdown,
   DiMongodb,
   DiNodejsSmall,
-  DiMysql,
+  // DiMysql,
   DiNpm,
-  DiPython,
-  DiPhotoshop,
-  DiPhp,
+  // DiPython,
+  // DiPhotoshop,
+  // DiPhp,
   DiPostgresql,
-  DiRor,
+  // DiRor,
   DiSass,
 } from 'react-icons/di'
 
@@ -26,7 +26,7 @@ import { IoAccessibilitySharp } from 'react-icons/io5'
 
 import { GrGatsbyjs } from 'react-icons/gr'
 
-import { SiNextDotJs, SiNetlify } from 'react-icons/si'
+// import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
 const StyledProjectsList = styled.ul`
   list-style-type: none;
