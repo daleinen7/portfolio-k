@@ -60,7 +60,8 @@ const StyledAbout = styled.section`
 const StyledTools = styled.section`
   color: white;
 
-  h2, h3 {
+  h2,
+  h3 {
     text-align: center;
     margin: 2rem;
   }
@@ -134,7 +135,7 @@ export default function Software() {
     <>
       <h2 className="visually-hidden">Software Engineer</h2>
       <section>
-        <h3 className="visually-hidden">Projects</h3>
+        <h3>Projects</h3>
         <StyledProjectsList>
           {projects.map((project, idx) => {
             return (

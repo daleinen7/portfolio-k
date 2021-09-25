@@ -21,25 +21,33 @@ const StyledSection = styled.section`
   text-align: left;
   width: 100%;
 
+  h3 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+  
   ul,
   h3,
   h4 {
     font-family: 'Roboto slab', serif;
-    font-size: 4rem;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
     color: white;
+    li {
+      font-size: 1.875rem;
+    }
   }
 
   h4 {
+    font-size: 3.5rem;
     margin: 0;
   }
 
   p {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: var(--pale-green);

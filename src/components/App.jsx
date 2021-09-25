@@ -1,6 +1,7 @@
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
+import Background from './Background'
 
 import styled from 'styled-components'
 
@@ -35,7 +36,7 @@ const Nav = styled.nav`
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
-  margin: 3rem 0;
+  margin: 14rem 0;
   a {
     font-family: 'Roboto Slab', serif;
     color: var(--pale-green);
@@ -52,9 +53,11 @@ const Nav = styled.nav`
 export default function App() {
   return (
     <Container>
+      <Background />
       <Header>
         <h1>
-          <span className="green">Hi. I'm</span> <span className="DOUG">Doug.</span>  
+          <span className="green">Hi. I'm</span>{' '}
+          <span className="DOUG">Doug.</span>
         </h1>
         <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
       </Header>
@@ -62,6 +65,7 @@ export default function App() {
         <NavLink to="/software" activeClassName="selected">
           Software Stuff
         </NavLink>
+
         <NavLink to="/audio" activeClassName="selected">
           Audio Stuff
         </NavLink>

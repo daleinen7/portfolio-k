@@ -24,15 +24,18 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: 'Roboto Slab', serif;
   color: white;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: var(--green);
   font-size: 4rem;
   font-weight: 700;
+  text-align: center;
   font-family: 'Roboto Slab', serif;
 }
 
