@@ -20,20 +20,56 @@ import {
   DiPostgresql,
   // DiRor,
   DiSass,
+  DiReact,
 } from 'react-icons/di'
 
 import { IoAccessibilitySharp } from 'react-icons/io5'
 
 import { GrGatsbyjs } from 'react-icons/gr'
 
-// import { SiNextDotJs, SiNetlify } from 'react-icons/si'
+import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
 const StyledProjectsList = styled.ul`
   list-style-type: none;
   padding: 0;
 `
 
+const StyledTools = styled.section`
+  color: white;
+  margin: 4rem;
+
+
+  h2,
+  h3 {
+    text-align: center;
+    margin: 2rem;
+  }
+
+  ul {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 45rem;
+    height: 10rem;
+  }
+  li {
+    font-size: 5rem;
+    padding: 0.4rem 1.2rem;
+  }
+`
+
+const StyledAbout = styled.section`
+  margin: 4rem;
+  p {
+    font-size: 1.5rem;
+  }
+`
+
 const StyledLinksList = styled.ul`
+  margin: 4rem;
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -49,38 +85,6 @@ const StyledLinksList = styled.ul`
       color: var(--green);
       font-style: italic;
     }
-  }
-`
-
-const StyledAbout = styled.section`
-  p {
-    font-size: 1.5rem;
-  }
-`
-const StyledTools = styled.section`
-  color: white;
-
-  h2,
-  h3 {
-    text-align: center;
-    margin: 2rem;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: flex-start;
-    list-style-type: none;
-    justify-content: center;
-    width: 100%;
-    height: 10em;
-  }
-  li {
-    font-size: 4rem;
-    padding-left: 2rem;
   }
 `
 
@@ -107,14 +111,15 @@ const projects = [
 
 const skills = [
   <DiGithubBadge />,
-  <DiCss3 />,
+  <DiHtml5 />,
+  <DiReact />,
   // <DiHeroku />,
   // <DiDjango />,
-  <DiHtml5 />,
   <DiJsBadge />,
   // <DiLinux />,
   // <DiMarkdown />,
   <DiMongodb />,
+  <DiCss3 />,
   <DiNodejsSmall />,
   // <DiMysql />,
   <DiNpm />,

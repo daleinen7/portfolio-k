@@ -1,19 +1,31 @@
+import {useState} from 'react'
 import AudioExamples from './AudioExamples.jsx'
 import styled from 'styled-components'
+import backInTime from '../static/backInTime.mp3'
+import brightEyed from '../static/brightEyed.mp3'
+import drift from '../static/drift.mp3'
 
 const audioProjects = [
   {
     artist: 'Muh',
     description:
-      'I was given a project with raw recordings and I mixed and mastered the album over the course of 2 months.',
-    audio: '',
+      'Mixed and Mastered: Through tight collaboration of the arist I was able to deliver a focused rock album bringing isolated tracks to a cohesive vision and preserving.',
+    audio: brightEyed,
+    song: 'Bright Eyed',
   },
-  { artist: 'Indigo', description: 'Mastered in a single day.', audio: '' },
   {
-    artist: 'Low Swans',
+    artist: 'Indigo',
     description:
-      "I've known Jon from Low Swans for a while and it was fun to work with him on Post.",
-    audio: '',
+      'Mastered: A laid back tune where I mostly just controlled the low-mids to make sure th eeasy going bass and vocals worked well together. Finished in a single day.',
+    audio: backInTime,
+    song: 'Back In Time (feat. Willow Newman)',
+  },
+  {
+    artist: 'Black Tie Elephant',
+    description:
+      'Mastering: The goal was to preserve the dynamics and ambiance of the room, but pull out the clarity and volume.',
+    audio: drift,
+    song: 'Drift',
   },
 ]
 
@@ -25,7 +37,7 @@ const StyledSection = styled.section`
     font-size: 4rem;
     margin-bottom: 2rem;
   }
-  
+
   ul,
   h3,
   h4 {
@@ -55,6 +67,13 @@ const StyledSection = styled.section`
 `
 
 export default function Audio() {
+  const [play, setPlay] = useState(false)
+  const [audio, setAudio] = useState()
+
+  const audioControls = () => {
+    play ? audio.pause() : audio.play()
+    setPlay(!play)
+  }
   return (
     <>
       <h2 className="visually-hidden">Audio Engineer</h2>
@@ -72,8 +91,8 @@ export default function Audio() {
           return (
             <article key={idx}>
               <h4>{project.artist}</h4>
-              <p>{project.description}</p>
-              <AudioExamples />
+              <p>{project.description}</p>4
+              
             </article>
           )
         })}

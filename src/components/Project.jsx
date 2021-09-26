@@ -31,7 +31,7 @@ const ProjectContainer = styled.article`
   }
 
   img {
-    border: 1px solid var(--green);
+    border: 4px solid var(--green);
   }
   // if project is an odd number have image on left
   ${(props) =>
