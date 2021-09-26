@@ -127,7 +127,7 @@ const skills = [
   <IoAccessibilitySharp />,
   <GrGatsbyjs />,
   // <SiNextDotJs />,
-  <SiNetlify />,
+  // <SiNetlify />,
 ].map((skill, idx) => <li key={idx}>{skill}</li>)
 
 export default function Software() {
