@@ -27,7 +27,7 @@ import { IoAccessibilitySharp } from 'react-icons/io5'
 
 import { GrGatsbyjs } from 'react-icons/gr'
 
-import { SiNextDotJs, SiNetlify } from 'react-icons/si'
+// import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
 const StyledProjectsList = styled.ul`
   list-style-type: none;

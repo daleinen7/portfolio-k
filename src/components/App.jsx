@@ -12,6 +12,14 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `
+
+const Hero = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const Header = styled.header`
   padding-top: 3rem;
   text-align: center;
@@ -54,22 +62,23 @@ export default function App() {
   return (
     <Container>
       <Background />
-      <Header>
-        <h1>
-          <span className="green">Hi. I'm</span>{' '}
-          <span className="DOUG">Doug.</span>
-        </h1>
-        <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
-      </Header>
-      <Nav>
-        <NavLink to="/software" activeClassName="selected">
-          Software Stuff
-        </NavLink>
-
-        <NavLink to="/audio" activeClassName="selected">
-          Audio Stuff
-        </NavLink>
-      </Nav>
+      <Hero>
+        <Header>
+          <h1>
+            <span className="green">Hi. I'm</span>{' '}
+            <span className="DOUG">Doug.</span>
+          </h1>
+          <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
+        </Header>
+        <Nav>
+          <NavLink to="/software" activeClassName="selected">
+            Software Stuff
+          </NavLink>
+          <NavLink to="/audio" activeClassName="selected">
+            Audio Stuff
+          </NavLink>
+        </Nav>
+      </Hero>
       <Switch>
         <Route path="/software">
           <Software />

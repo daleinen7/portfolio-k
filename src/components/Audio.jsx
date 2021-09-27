@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import AudioExamples from './AudioExamples.jsx'
 import styled from 'styled-components'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
