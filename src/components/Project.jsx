@@ -4,7 +4,7 @@ const ProjectContainer = styled.article`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 14rem;
 
   .info {
     margin: 0 0 0 3.75rem;

@@ -40,7 +40,7 @@ const Header = styled.header`
   }
 `
 const Nav = styled.nav`
-  width: 80%;
+  width: 100%;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;

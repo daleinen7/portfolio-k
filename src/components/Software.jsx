@@ -38,7 +38,6 @@ const StyledTools = styled.section`
   color: white;
   margin: 4rem;
 
-
   h2,
   h3 {
     text-align: center;
@@ -105,7 +104,7 @@ const projects = [
     title: 'Weird Radio',
     site: 'https://weirdradio.netlify.app',
     description:
-      'Internet radio designed promoting experimental music from the West Coast. A project where I have full control of the tech side and collaborate with two designers to bring the product to reality. Currently a work in progress.',
+      'An internet radio station promoting experimental music from the West Coast. A project where I have full control of the tech side and collaborate with two designers to bring the product to reality. Currently a work in progress.',
   },
 ]
 
