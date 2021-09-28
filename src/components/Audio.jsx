@@ -1,5 +1,7 @@
-import {useState} from 'react'
+import useSound from 'use-sound'
 import styled from 'styled-components'
+import playButton from '../static/play.svg'
+import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
@@ -30,11 +32,17 @@ const audioProjects = [
 
 const StyledSection = styled.section`
   text-align: left;
-  width: 100%;
+  width: 750px;
 
   h3 {
-    font-size: 4rem;
+    font-size: 3.625rem;
     margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 2.875em;
+    margin: 0;
   }
 
   ul,
@@ -52,11 +60,6 @@ const StyledSection = styled.section`
     }
   }
 
-  h4 {
-    font-size: 3.5rem;
-    margin: 0;
-  }
-
   p {
     font-size: 1.5rem;
     font-weight: 400;
@@ -66,13 +69,12 @@ const StyledSection = styled.section`
 `
 
 export default function Audio() {
-  const [play, setPlay] = useState(false)
-  const [audio, setAudio] = useState()
+  const [brightEyedPlayer] = useSound(brightEyed)
+  const [driftPlayer] = useSound(drift)
+  const [backInTimePlayer] = useSound(backInTime)
 
-  const audioControls = () => {
-    play ? audio.pause() : audio.play()
-    setPlay(!play)
-  }
+  const player = [brightEyedPlayer, driftPlayer, backInTimePlayer]
+
   return (
     <>
       <h2 className="visually-hidden">Audio Engineer</h2>
@@ -91,7 +93,9 @@ export default function Audio() {
             <article key={idx}>
               <h4>{project.artist}</h4>
               <p>{project.description}</p>4
-              
+              <button onClick={player[idx]}>
+                <img src={playButton} alt="audio control play/pause" />
+              </button>
             </article>
           )
         })}

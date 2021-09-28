@@ -1,4 +1,4 @@
-import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
+import { NavLink, Switch, Route, Redirect, useLocation } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
 import Background from './Background'
@@ -59,9 +59,10 @@ const Nav = styled.nav`
 `
 
 export default function App() {
+  const location = useLocation()
   return (
     <Container>
-      <Background />
+      <Background location={location} />
       <Hero>
         <Header>
           <h1>

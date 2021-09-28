@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import linePortrait from '../static/portrait.png'
-import line from '../static/line.png'
+import softwareLine from '../static/line.png'
+import audioLine from '../static/audioLine.png'
 
 const StyledBackground = styled.div`
   position: absolute;
@@ -18,17 +19,23 @@ const Line = styled.img`
   position: relative;
   left: 40px;
 `
-export default function Background() {
+export default function Background({ location }) {
   const [windowHeight, setWindowHeight] = useState()
 
   useEffect(() => {
     setWindowHeight(window.innerHeight)
   }, [])
 
+  if (location.pathname === '/audio') console.log(location.pathname)
+
   return (
     <StyledBackground windowHeight={windowHeight}>
       <StyledPortrait src={linePortrait} alt="Doug" />
-      <Line src={line} />
+      {location.pathname === '/audio' ? (
+        <Line src={audioLine} alt="audio cable drawing" />
+      ) : (
+        <Line src={softwareLine} />
+      )}
     </StyledBackground>
   )
 }
