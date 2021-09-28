@@ -1,11 +1,10 @@
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
-import pauseButton from '../static/pause.svg'
+// import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
-import styledComponents from 'styled-components'
 
 const audioProjects = [
   {
