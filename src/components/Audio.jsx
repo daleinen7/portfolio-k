@@ -1,10 +1,11 @@
 import useSound from 'use-sound'
 import styled from 'styled-components'
-import playButton from '../static/play.svg'
+import playButton from '../static/play.png'
 import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
+import styledComponents from 'styled-components'
 
 const audioProjects = [
   {
@@ -66,6 +67,16 @@ const StyledSection = styled.section`
     font-family: 'Roboto', sans-serif;
     color: var(--pale-green);
   }
+
+  article {
+    margin-bottom: 3rem;
+  }
+`
+
+const PlayButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
 `
 
 export default function Audio() {
@@ -93,9 +104,9 @@ export default function Audio() {
             <article key={idx}>
               <h4>{project.artist}</h4>
               <p>{project.description}</p>4
-              <button onClick={player[idx]}>
+              <PlayButton onClick={player[idx]}>
                 <img src={playButton} alt="audio control play/pause" />
-              </button>
+              </PlayButton>
             </article>
           )
         })}
