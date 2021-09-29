@@ -2,7 +2,7 @@ import { useState } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
-// import pauseButton from '../static/pause.svg'
+import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
@@ -113,15 +113,28 @@ export default function Audio() {
               <p>{project.description}</p>
               <PlayButton
                 onMouseDown={() => {
-                  console.log('Song being Set', player[idx])
+                  stop()
                   setSong(player[idx])
                 }}
                 onClick={() => {
-                  playing[idx] ? stop() : play()
+                  setPlaying.forEach((playingStatus) => {
+                    playingStatus(false)
+                  })
+                  play()
                   setPlaying[idx](!playing[idx])
                 }}
+                // onClick={() => {
+                //   setPlaying.forEach(playingStatus => {
+                //     setPlaying(playingStatus(false))
+                //   })
+                //   playing[idx] ? stop() : play()
+                //   setPlaying[idx](!playing[idx])
+                // }}
               >
-                <img src={playButton} alt="audio control play/pause" />
+                <img
+                  src={playing[idx] ? pauseButton : playButton}
+                  alt="audio control play/pause"
+                />
               </PlayButton>
             </article>
           )

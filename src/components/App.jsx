@@ -2,6 +2,7 @@ import { NavLink, Switch, Route, Redirect, useLocation } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
 import Background from './Background'
+import Footer from './Footer'
 
 import styled from 'styled-components'
 
@@ -91,6 +92,7 @@ export default function App() {
           <Redirect to="/software" />
         </Route>
       </Switch>
+      <Footer />
     </Container>
   )
 }
