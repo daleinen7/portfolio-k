@@ -26,8 +26,6 @@ export default function Background({ location }) {
     setWindowHeight(window.innerHeight)
   }, [])
 
-  if (location.pathname === '/audio') console.log(location.pathname)
-
   return (
     <StyledBackground windowHeight={windowHeight}>
       <StyledPortrait src={linePortrait} alt="Doug" />

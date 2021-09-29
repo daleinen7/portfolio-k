@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
@@ -17,7 +18,7 @@ const audioProjects = [
   {
     artist: 'Indigo',
     description:
-      'Mastered: A laid back tune where I mostly just controlled the low-mids to make sure th eeasy going bass and vocals worked well together. Finished in a single day.',
+      'Mastered: A laid back tune where I mostly just controlled the low-mids to make sure th easy going bass and vocals worked well together. Finished in a single day.',
     audio: backInTime,
     song: 'Back In Time (feat. Willow Newman)',
   },
@@ -79,11 +80,17 @@ const PlayButton = styled.button`
 `
 
 export default function Audio() {
-  const [brightEyedPlayer] = useSound(brightEyed)
-  const [driftPlayer] = useSound(drift)
-  const [backInTimePlayer] = useSound(backInTime)
+  const [playingBE, setPlayingBE] = useState(false)
+  const [playingD, setPlayingD] = useState(false)
+  const [playingBIT, setPlayingBIT] = useState(false)
 
-  const player = [brightEyedPlayer, driftPlayer, backInTimePlayer]
+  const [song, setSong] = useState(brightEyed)
+
+  const [play, { stop }] = useSound(song)
+
+  const setPlaying = [setPlayingBE, setPlayingD, setPlayingBIT]
+  const playing = [playingBE, playingD, playingBIT]
+  const player = [brightEyed, drift, backInTime]
 
   return (
     <>
@@ -98,12 +105,22 @@ export default function Audio() {
       </StyledSection>
       <StyledSection>
         <h3>Where I've done what I do.</h3>
+
         {audioProjects.map((project, idx) => {
           return (
             <article key={idx}>
               <h4>{project.artist}</h4>
-              <p>{project.description}</p>4
-              <PlayButton onClick={player[idx]}>
+              <p>{project.description}</p>
+              <PlayButton
+                onMouseDown={() => {
+                  console.log('Song being Set', player[idx])
+                  setSong(player[idx])
+                }}
+                onClick={() => {
+                  playing[idx] ? stop() : play()
+                  setPlaying[idx](!playing[idx])
+                }}
+              >
                 <img src={playButton} alt="audio control play/pause" />
               </PlayButton>
             </article>
