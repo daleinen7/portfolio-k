@@ -88,9 +88,9 @@ export default function Audio() {
 
   const [play, { stop }] = useSound(song)
 
-  const setPlaying = [setPlayingBE, setPlayingD, setPlayingBIT]
-  const playing = [playingBE, playingD, playingBIT]
-  const player = [brightEyed, drift, backInTime]
+  const setPlaying = [setPlayingBE, setPlayingBIT, setPlayingD]
+  const playing = [playingBE, playingBIT, playingD]
+  const player = [brightEyed, backInTime, drift]
 
   return (
     <>
@@ -120,16 +120,9 @@ export default function Audio() {
                   setPlaying.forEach((playingStatus) => {
                     playingStatus(false)
                   })
-                  play()
+                  playing[idx] ? stop() : play()
                   setPlaying[idx](!playing[idx])
                 }}
-                // onClick={() => {
-                //   setPlaying.forEach(playingStatus => {
-                //     setPlaying(playingStatus(false))
-                //   })
-                //   playing[idx] ? stop() : play()
-                //   setPlaying[idx](!playing[idx])
-                // }}
               >
                 <img
                   src={playing[idx] ? pauseButton : playButton}
