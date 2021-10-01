@@ -17,7 +17,8 @@ const StyledPortrait = styled.img`
 `
 const Line = styled.img`
   position: relative;
-  left: 40px;
+  right: 72px;
+  top: -2px;
 `
 export default function Background({ location }) {
   const [windowHeight, setWindowHeight] = useState()

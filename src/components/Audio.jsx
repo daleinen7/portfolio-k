@@ -71,6 +71,10 @@ const StyledSection = styled.section`
   article {
     margin-bottom: 3rem;
   }
+
+  &:first-of-type {
+    margin-top: 330px;
+  }
 `
 
 const PlayButton = styled.button`

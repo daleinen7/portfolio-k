@@ -27,11 +27,21 @@ import { IoAccessibilitySharp } from 'react-icons/io5'
 
 import { GrGatsbyjs } from 'react-icons/gr'
 
+import candyFluffs from '../static/candyFluffs.png'
+import bearcabulary from '../static/bearcabulary.png'
+import weirdRadio from '../static/weirdRadio.png'
+
 // import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
 const StyledProjectsList = styled.ul`
   list-style-type: none;
   padding: 0;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 15rem;
+    }
+  }
 `
 
 const StyledTools = styled.section`
@@ -61,7 +71,7 @@ const StyledTools = styled.section`
 `
 
 const StyledAbout = styled.section`
-  margin: 4rem;
+  margin: 500px 0 4rem;
   p {
     font-size: 1.5rem;
   }
@@ -93,18 +103,21 @@ const projects = [
     site: 'https://candyfluffs.com',
     description:
       'My client needed an affordable, quick, and easy solution. Gatsby and Jamstack delivered on all counts and more.',
+    img: candyFluffs,
   },
   {
     title: 'Bearcabulary',
     site: 'https://bearcabulary.com',
     description:
       'Originally built in a 3 day hack-a-thon, some of the team re-imagined the project in Gatsby and NetlifyCMS to be open source and extensible.',
+    img: bearcabulary,
   },
   {
     title: 'Weird Radio',
     site: 'https://weirdradio.netlify.app',
     description:
       'An internet radio station promoting experimental music from the West Coast. A project where I have full control of the tech side and collaborate with two designers to bring the product to reality. Currently a work in progress.',
+    img: weirdRadio,
   },
 ]
 
@@ -149,6 +162,7 @@ export default function Software() {
                   description={project.description}
                   idx={idx}
                   site={project.site}
+                  img={project.img}
                 />
               </li>
             )

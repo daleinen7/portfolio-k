@@ -4,7 +4,6 @@ const ProjectContainer = styled.article`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  margin-bottom: 14rem;
 
   .info {
     margin: 0 0 0 3.75rem;
@@ -32,6 +31,7 @@ const ProjectContainer = styled.article`
 
   img {
     border: 4px solid var(--green);
+    width: 440px;
   }
   // if project is an odd number have image on left
   ${(props) =>
@@ -55,7 +55,7 @@ const ProjectContainer = styled.article`
       }
     `}
 `
-export default function Project({ title, description, idx, site }) {
+export default function Project({ title, description, idx, img, site }) {
   return (
     <ProjectContainer idx={idx}>
       <div className="info">
@@ -67,7 +67,7 @@ export default function Project({ title, description, idx, site }) {
         </a>
       </div>
 
-      <img src="https://picsum.photos/440/380" alt={title} />
+      <img src={img} alt={title} />
     </ProjectContainer>
   )
 }
