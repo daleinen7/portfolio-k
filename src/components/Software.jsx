@@ -150,9 +150,9 @@ const skills = [
 export default function Software() {
   return (
     <>
-      <h2 className="visually-hidden">Software Engineer</h2>
+      <h2 className="visually-hidden">Software Engineer.</h2>
       <section>
-        <h3>Projects</h3>
+        <h3>Projects.</h3>
         <StyledProjectsList>
           {projects.map((project, idx) => {
             return (

@@ -98,7 +98,7 @@ export default function Audio() {
 
   return (
     <>
-      <h2 className="visually-hidden">Audio Engineer</h2>
+      <h2 className="visually-hidden">Audio Engineer.</h2>
       <StyledSection>
         <h3>What I can do for you.</h3>
         <ul>
@@ -138,7 +138,7 @@ export default function Audio() {
         })}
       </StyledSection>
       <StyledSection>
-        <h3>Why I do what I do</h3>
+        <h3>Why I do what I do.</h3>
         <p>
           I've always felt most comfortable in the place where art and science
           and technology converge. Whether it's Audio engineering, Picture
