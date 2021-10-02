@@ -9,11 +9,11 @@ const StyledBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: calc(${(props) => props.windowHeight}px / 3 + 3rem);
+  top: calc(${(props) => props.windowHeight}px / 1.7);
   z-index: -1;
 `
 const StyledPortrait = styled.img`
-  width: 500px;
+  width: 380px;
 `
 const Line = styled.img`
   position: relative;

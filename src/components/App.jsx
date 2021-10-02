@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { NavLink, Switch, Route, Redirect, useLocation } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
@@ -12,18 +13,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .isSticky {
+    background: #181818;
+  }
 `
 
 const Hero = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: calc(100vh - 6rem);
 `
 
 const Header = styled.header`
-  padding-top: 3rem;
+  padding-top: calc(44vh - 92px);
   text-align: center;
+  display: block;
 
   h1 {
     font-size: 6rem;
@@ -32,7 +35,7 @@ const Header = styled.header`
   }
 
   .DOUG {
-    font-weight: 700;
+    font-weight: 900;
   }
 
   p {
@@ -41,11 +44,14 @@ const Header = styled.header`
   }
 `
 const Nav = styled.nav`
+  position: sticky;
+  top: 0;
   width: 100%;
+  padding: 1rem 5rem;
   font-size: 1.5rem;
   display: flex;
+
   justify-content: space-between;
-  margin: 14rem 0;
   a {
     font-family: 'Roboto Slab', serif;
     color: var(--pale-green);
@@ -60,11 +66,30 @@ const Nav = styled.nav`
 `
 
 export default function App() {
+  const [isSticky, setIsSticky] = useState(false)
   const location = useLocation()
+  const ref = useRef()
+
+  useEffect(() => {
+    const cachedRef = ref.current,
+      observer = new IntersectionObserver(
+        ([e]) => {
+          setIsSticky(e.intersectionRatio < 1)
+        },
+        { threshold: [1] }
+      )
+
+    observer.observe(cachedRef)
+    // unmount
+    return function () {
+      observer.unobserve(cachedRef)
+    }
+  }, [])
+
   return (
     <Container>
       <Background location={location} />
-      <Hero>
+      <Hero ref={ref}>
         <Header>
           <h1>
             <span className="green">Hi. I'm</span>{' '}
@@ -72,15 +97,15 @@ export default function App() {
           </h1>
           <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
         </Header>
-        <Nav>
-          <NavLink to="/software" activeClassName="selected">
-            Software Stuff
-          </NavLink>
-          <NavLink to="/audio" activeClassName="selected">
-            Audio Stuff
-          </NavLink>
-        </Nav>
       </Hero>
+      <Nav className={isSticky ? 'isSticky' : ''}>
+        <NavLink to="/software" activeClassName="selected">
+          Software Stuff
+        </NavLink>
+        <NavLink to="/audio" activeClassName="selected">
+          Audio Stuff
+        </NavLink>
+      </Nav>
       <Switch>
         <Route path="/software">
           <Software />
