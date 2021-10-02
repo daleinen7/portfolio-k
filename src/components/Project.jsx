@@ -61,7 +61,12 @@ export default function Project({ title, description, idx, img, site }) {
       <div className="info">
         <h4>{title}</h4>
         <p className="green">{description}</p>
-        <a href={site} className="green">
+        <a
+          href={site}
+          className="green"
+          target="_blanks"
+          rel="noopener noreferrer"
+        >
           {' '}
           Check it out &rarr;
         </a>

@@ -51,7 +51,7 @@ const StyledTools = styled.section`
   h2,
   h3 {
     text-align: center;
-    margin: 2rem;
+    margin: 4rem 0;
   }
 
   ul {
@@ -186,13 +186,31 @@ export default function Software() {
 
       <StyledLinksList>
         <li>
-          <a href="https://www.dougleinen.com/Doug_Leinen-Resume.pdf">Resume</a>
+          <a
+            href="https://www.dougleinen.com/Doug_Leinen-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </li>
         <li>
-          <a href="https://github.com/daleinen7">GitHub</a>
+          <a
+            href="https://github.com/daleinen7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/doug-leinen/">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/doug-leinen/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </li>
       </StyledLinksList>
     </>
