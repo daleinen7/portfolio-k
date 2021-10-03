@@ -24,6 +24,9 @@ const ProjectContainer = styled.article`
   a {
     font-size: 2.25rem;
     font-weight: 500;
+    text-decoration: none;
+    padding: 0 2px 6px 2px;
+    border-bottom: 1px solid var(--pale-green);
     &:hover {
       font-style: italic;
     }
@@ -40,11 +43,10 @@ const ProjectContainer = styled.article`
       flex-direction: row;
 
       .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         margin: 0 3.75rem 0 0;
-      }
-
-      h4 {
-        text-align: right;
       }
       p {
         text-align: right;

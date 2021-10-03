@@ -50,6 +50,8 @@ p {
 
 a {
   font-family: 'Roboto Slab', serif;
+  text-decoration: none;
+  padding: 0 2px 6px 2px;
 }
 
 .green {
