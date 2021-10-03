@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  margin: 4rem 1rem 1rem 0.5rem;
+  padding: 4rem 1rem;
   width: 100%;
-  color: white;
+  color: #adadad;
   font-size: 1.125rem;
   font-weight: 400;
   text-align: right;
   font-family: 'Roboto', sans-serif;
   a {
-    color: white;
+    color: #adadad;
   }
 `
 

@@ -87,37 +87,39 @@ export default function App() {
   }, [])
 
   return (
-    <Container>
-      <Background location={location} />
-      <Hero ref={ref}>
-        <Header>
-          <h1>
-            <span className="green">Hi. I'm</span>{' '}
-            <span className="DOUG">Doug.</span>
-          </h1>
-          <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
-        </Header>
-      </Hero>
-      <Nav className={isSticky ? 'isSticky' : ''}>
-        <NavLink to="/software" activeClassName="selected">
-          Software Stuff
-        </NavLink>
-        <NavLink to="/audio" activeClassName="selected">
-          Audio Stuff
-        </NavLink>
-      </Nav>
-      <Switch>
-        <Route path="/software">
-          <Software />
-        </Route>
-        <Route path="/audio">
-          <Audio />
-        </Route>
-        <Route path="/">
-          <Redirect to="/software" />
-        </Route>
-      </Switch>
+    <>
+      <Container>
+        <Background location={location} />
+        <Hero ref={ref}>
+          <Header>
+            <h1>
+              <span className="green">Hi. I'm</span>{' '}
+              <span className="DOUG">Doug.</span>
+            </h1>
+            <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
+          </Header>
+        </Hero>
+        <Nav className={isSticky ? 'isSticky' : ''}>
+          <NavLink to="/software" activeClassName="selected">
+            Software Stuff
+          </NavLink>
+          <NavLink to="/audio" activeClassName="selected">
+            Audio Stuff
+          </NavLink>
+        </Nav>
+        <Switch>
+          <Route path="/software">
+            <Software />
+          </Route>
+          <Route path="/audio">
+            <Audio />
+          </Route>
+          <Route path="/">
+            <Redirect to="/software" />
+          </Route>
+        </Switch>
+      </Container>
       <Footer />
-    </Container>
+    </>
   )
 }

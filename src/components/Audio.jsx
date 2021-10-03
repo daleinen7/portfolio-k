@@ -62,7 +62,7 @@ const StyledSection = styled.section`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: var(--pale-green);
