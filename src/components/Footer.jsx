@@ -3,13 +3,13 @@ import styled from 'styled-components'
 const StyledFooter = styled.footer`
   padding: 4rem 1rem;
   width: 100%;
-  color: #adadad;
+  color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
   text-align: right;
   font-family: 'Roboto', sans-serif;
   a {
-    color: #adadad;
+    color: #999999;
   }
 `
 
