@@ -35,7 +35,7 @@ import weirdRadio from '../static/weirdRadio.png'
 
 const StyledProjectsSection = styled.section`
   h3 {
-    margin: 180px 0 0 0;
+    margin: 100px 0 0 0;
   }
 `
 

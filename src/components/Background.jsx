@@ -13,11 +13,11 @@ const StyledBackground = styled.div`
   z-index: -1;
 `
 const StyledPortrait = styled.img`
-  width: 380px;
+  width: 300px;
 `
 const Line = styled.img`
   position: relative;
-  right: 85px;
+  right: 124px;
   top: -2px;
 `
 export default function Background({ location }) {
