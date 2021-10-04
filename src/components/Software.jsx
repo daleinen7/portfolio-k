@@ -33,9 +33,15 @@ import weirdRadio from '../static/weirdRadio.png'
 
 // import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 
+const StyledProjectsSection = styled.section`
+  h3 {
+    margin: 180px 0 0 0;
+  }
+`
+
 const StyledProjectsList = styled.ul`
   list-style-type: none;
-  padding: 0;
+  padding: 20px 0;
 
   li {
     &:not(:last-child) {
@@ -51,7 +57,7 @@ const StyledTools = styled.section`
   h2,
   h3 {
     text-align: center;
-    margin: 4rem 0;
+    margin: 20px 0;
   }
 
   ul {
@@ -71,7 +77,7 @@ const StyledTools = styled.section`
 `
 
 const StyledAbout = styled.section`
-  margin: 500px 0 4rem;
+  margin: 560px 0 4rem;
   p {
     font-size: 1.5rem;
   }
@@ -152,7 +158,7 @@ export default function Software() {
   return (
     <>
       <h2 className="visually-hidden">Software Engineer.</h2>
-      <section>
+      <StyledProjectsSection>
         <h3>Projects.</h3>
         <StyledProjectsList>
           {projects.map((project, idx) => {
@@ -169,7 +175,7 @@ export default function Software() {
             )
           })}
         </StyledProjectsList>
-      </section>
+      </StyledProjectsSection>
       <StyledTools>
         <h3 className="green">Development Tools.</h3>
         <ul>{skills}</ul>

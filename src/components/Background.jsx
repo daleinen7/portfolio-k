@@ -17,7 +17,7 @@ const StyledPortrait = styled.img`
 `
 const Line = styled.img`
   position: relative;
-  right: 72px;
+  right: 85px;
   top: -2px;
 `
 export default function Background({ location }) {
