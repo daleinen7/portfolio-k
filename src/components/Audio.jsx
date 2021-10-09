@@ -73,7 +73,7 @@ const StyledSection = styled.section`
   }
 
   &:first-of-type {
-    margin-top: 330px;
+    margin-top: 510px;
   }
 `
 
