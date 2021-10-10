@@ -6,12 +6,13 @@ import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
+import { useEffect } from 'react/cjs/react.development'
 
 const audioProjects = [
   {
     artist: 'Muh',
     description:
-      'Mixed and Mastered: Through tight collaboration of the arist I was able to deliver a focused rock album bringing isolated tracks to a cohesive vision and preserving.',
+      'Mixed and Mastered: Through tight collaboration of the arist I was able to deliver a focused rock album bringing isolated tracks to a cohesive vision and preserving the initial inspiration of the recordings.',
     audio: brightEyed,
     song: 'Bright Eyed',
   },
@@ -75,6 +76,11 @@ const StyledSection = styled.section`
   &:first-of-type {
     margin-top: 510px;
   }
+
+  .playerControls {
+    display: flex;
+    align-items: center;
+  }
 `
 
 const PlayButton = styled.button`
@@ -83,18 +89,55 @@ const PlayButton = styled.button`
   cursor: pointer;
 `
 
+const SongProgress = styled.span`
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: white;
+  padding: 14px;
+`
+
 export default function Audio() {
   const [playingBE, setPlayingBE] = useState(false)
   const [playingD, setPlayingD] = useState(false)
   const [playingBIT, setPlayingBIT] = useState(false)
 
+  const [audioProgress, setAudioProgress] = useState(0)
+  const [intervalId, setIntervalId] = useState(0)
+
+  const handleSongProgress = () => {
+    if (intervalId) {
+      clearInterval(intervalId)
+      setIntervalId(0)
+      return
+    }
+
+    const newIntervalId = setInterval(() => {
+      setAudioProgress((prev) => prev + 1)
+    }, 1000)
+    setIntervalId(newIntervalId)
+  }
+
   const [song, setSong] = useState(brightEyed)
 
-  const [play, { stop }] = useSound(song)
+  const [play, { stop, duration }] = useSound(song)
 
   const setPlaying = [setPlayingBE, setPlayingBIT, setPlayingD]
   const playing = [playingBE, playingBIT, playingD]
   const player = [brightEyed, backInTime, drift]
+
+  const songProgress = {
+    background: 'rgb(255,255,255)',
+    // totalSecondsOfSong = duration / 1000
+    // percentageProgress = progress / totalSecondsOfSong * 100
+    background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${
+      (audioProgress / (duration / 1000)) * 1000
+    }%, rgba(255,255,255,1) ${
+      (audioProgress / (duration / 1000)) * 1000 + 1
+    }%, rgba(255,255,255,1) 100%)`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  }
 
   return (
     <>
@@ -115,24 +158,28 @@ export default function Audio() {
             <article key={idx}>
               <h4>{project.artist}</h4>
               <p>{project.description}</p>
-              <PlayButton
-                onMouseDown={() => {
-                  stop()
-                  setSong(player[idx])
-                }}
-                onClick={() => {
-                  setPlaying.forEach((playingStatus) => {
-                    playingStatus(false)
-                  })
-                  playing[idx] ? stop() : play()
-                  setPlaying[idx](!playing[idx])
-                }}
-              >
-                <img
-                  src={playing[idx] ? pauseButton : playButton}
-                  alt="audio control play/pause"
-                />
-              </PlayButton>
+              <div className="playerControls">
+                <PlayButton
+                  onMouseDown={() => {
+                    stop()
+                    setSong(player[idx])
+                  }}
+                  onClick={() => {
+                    setPlaying.forEach((playingStatus) => {
+                      playingStatus(false)
+                    })
+                    playing[idx] ? stop() : play()
+                    setPlaying[idx](!playing[idx])
+                    handleSongProgress()
+                  }}
+                >
+                  <img
+                    src={playing[idx] ? pauseButton : playButton}
+                    alt="audio control play/pause"
+                  />
+                </PlayButton>
+                <SongProgress style={songProgress}>{project.song}</SongProgress>
+              </div>
             </article>
           )
         })}
