@@ -73,10 +73,10 @@ export default function App() {
   useEffect(() => {
     const cachedRef = ref.current,
       observer = new IntersectionObserver(
-        ([e]) => {
-          setIsSticky(e.intersectionRatio < 1)
+        ([entry]) => {
+          setIsSticky(!entry.isIntersecting)
         },
-        { threshold: [1] }
+        { threshold: [0] }
       )
 
     observer.observe(cachedRef)
@@ -84,7 +84,7 @@ export default function App() {
     return function () {
       observer.unobserve(cachedRef)
     }
-  }, [])
+  }, [ref, setIsSticky])
 
   return (
     <>
