@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'

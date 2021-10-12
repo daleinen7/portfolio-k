@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import linePortrait from '../static/portrait.png'
 import softwareLine from '../static/line.png'

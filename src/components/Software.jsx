@@ -1,3 +1,4 @@
+import React from 'react'
 import Project from './Project'
 import styled from 'styled-components'
 import ScrollToTop from './ScrollToTop'
