@@ -1,5 +1,6 @@
 import Project from './Project'
 import styled from 'styled-components'
+import ScrollToTop from './ScrollToTop'
 
 import {
   DiGithubBadge,
@@ -157,6 +158,7 @@ const skills = [
 export default function Software() {
   return (
     <>
+      <ScrollToTop />
       <h2 className="visually-hidden">Software Engineer.</h2>
       <StyledProjectsSection>
         <h3>Projects.</h3>

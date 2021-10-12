@@ -6,6 +6,7 @@ import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
+import ScrollToTop from './ScrollToTop'
 
 const audioProjects = [
   {
@@ -98,6 +99,7 @@ export default function Audio() {
 
   return (
     <>
+      <ScrollToTop />
       <h2 className="visually-hidden">Audio Engineer.</h2>
       <StyledSection>
         <h3>What I can do for you.</h3>
