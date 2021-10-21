@@ -139,7 +139,7 @@ export default function Audio() {
     // percentageProgress = progress / totalSecondsOfSong * 100
 
     /////////// PROGRESS ///////////
-    background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${Math.floor(
+    backgroundImage: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${Math.floor(
       percentageProgress
     )}%, rgba(255,255,255,1) ${
       Math.floor(percentageProgress) + 1
@@ -147,7 +147,7 @@ export default function Audio() {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
 
-    // background: `linear-gradient(90deg, #eee 0%, #eee 40%, #23626d 41%, #23626d 100%)`,
+    // background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) 40%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 100%)`,
     // WebkitBackgroundClip: 'text',
     // WebkitTextFillColor: 'transparent',
   }
@@ -193,7 +193,11 @@ export default function Audio() {
                     alt="audio control play/pause"
                   />
                 </PlayButton>
-                <SongProgress style={songProgress}>{project.song}</SongProgress>
+                <SongProgress
+                  style={playing[idx] ? songProgress : { color: '#dbe0e0' }}
+                >
+                  {project.song}
+                </SongProgress>
               </div>
             </article>
           )
