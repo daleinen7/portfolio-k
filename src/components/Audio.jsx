@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
@@ -12,7 +12,7 @@ const audioProjects = [
   {
     artist: 'Muh',
     description:
-      'Mixed and Mastered: Through tight collaboration of the arist I was able to deliver a focused rock album bringing isolated tracks to a cohesive vision and preserving.',
+      'Mixed and Mastered: Through tight collaboration of the arist I was able to deliver a focused rock album bringing isolated tracks to a cohesive vision and preserving the initial inspiration of the recordings.',
     audio: brightEyed,
     song: 'Bright Eyed',
   },
@@ -76,6 +76,11 @@ const StyledSection = styled.section`
   &:first-of-type {
     margin-top: 510px;
   }
+
+  .playerControls {
+    display: flex;
+    align-items: center;
+  }
 `
 
 const PlayButton = styled.button`
@@ -84,18 +89,68 @@ const PlayButton = styled.button`
   cursor: pointer;
 `
 
+const SongProgress = styled.span`
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 36px;
+  /* color: white; */
+  padding: 14px;
+`
+
 export default function Audio() {
   const [playingBE, setPlayingBE] = useState(false)
   const [playingD, setPlayingD] = useState(false)
   const [playingBIT, setPlayingBIT] = useState(false)
 
+  const [audioProgress, setAudioProgress] = useState(0)
+  const [intervalId, setIntervalId] = useState(0)
+
+  const handleSongProgress = () => {
+    if (intervalId) {
+      clearInterval(intervalId)
+      setIntervalId(0)
+      return
+    }
+
+    const newIntervalId = setInterval(() => {
+      setAudioProgress((prev) => prev + 1)
+    }, 1000)
+    setIntervalId(newIntervalId)
+  }
+
   const [song, setSong] = useState(brightEyed)
 
-  const [play, { stop }] = useSound(song)
+  const [play, { stop, duration }] = useSound(song)
 
   const setPlaying = [setPlayingBE, setPlayingBIT, setPlayingD]
   const playing = [playingBE, playingBIT, playingD]
   const player = [brightEyed, backInTime, drift]
+
+  const totalSecondsOfSong = duration / 1000
+  const percentageProgress = (audioProgress / totalSecondsOfSong) * 100
+
+  useEffect(() => {
+    console.log('percentageOfProgress = ', percentageProgress)
+  }, [audioProgress])
+
+  const songProgress = {
+    // background: 'rgb(255,255,255)',
+    // totalSecondsOfSong = duration / 1000
+    // percentageProgress = progress / totalSecondsOfSong * 100
+
+    /////////// PROGRESS ///////////
+    backgroundImage: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${Math.floor(
+      percentageProgress
+    )}%, rgba(255,255,255,1) ${
+      Math.floor(percentageProgress) + 1
+    }%, rgba(255,255,255,1) 100%)`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+
+    // background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) 40%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 100%)`,
+    // WebkitBackgroundClip: 'text',
+    // WebkitTextFillColor: 'transparent',
+  }
 
   return (
     <>
@@ -117,24 +172,33 @@ export default function Audio() {
             <article key={idx}>
               <h4>{project.artist}</h4>
               <p>{project.description}</p>
-              <PlayButton
-                onMouseDown={() => {
-                  stop()
-                  setSong(player[idx])
-                }}
-                onClick={() => {
-                  setPlaying.forEach((playingStatus) => {
-                    playingStatus(false)
-                  })
-                  playing[idx] ? stop() : play()
-                  setPlaying[idx](!playing[idx])
-                }}
-              >
-                <img
-                  src={playing[idx] ? pauseButton : playButton}
-                  alt="audio control play/pause"
-                />
-              </PlayButton>
+              <div className="playerControls">
+                <PlayButton
+                  onMouseDown={() => {
+                    stop()
+                    setSong(player[idx])
+                    setAudioProgress(0)
+                  }}
+                  onClick={() => {
+                    setPlaying.forEach((playingStatus) => {
+                      playingStatus(false)
+                    })
+                    playing[idx] ? stop() : play()
+                    setPlaying[idx](!playing[idx])
+                    handleSongProgress()
+                  }}
+                >
+                  <img
+                    src={playing[idx] ? pauseButton : playButton}
+                    alt="audio control play/pause"
+                  />
+                </PlayButton>
+                <SongProgress
+                  style={playing[idx] ? songProgress : { color: '#dbe0e0' }}
+                >
+                  {project.song}
+                </SongProgress>
+              </div>
             </article>
           )
         })}
