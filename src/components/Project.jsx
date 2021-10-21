@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 
 const ProjectContainer = styled.article`
@@ -25,7 +26,7 @@ const ProjectContainer = styled.article`
     font-size: 2.25rem;
     font-weight: 500;
     text-decoration: none;
-    padding: 0 2px 6px 2px;
+    padding: 0 2px;
     border-bottom: 1px solid var(--pale-green);
     &:hover {
       font-style: italic;

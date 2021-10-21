@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { NavLink, Switch, Route, Redirect, useLocation } from 'react-router-dom'
 import Audio from './Audio'
 import Software from './Software'
@@ -6,6 +6,7 @@ import Background from './Background'
 import Footer from './Footer'
 
 import styled from 'styled-components'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const Container = styled.div`
   max-width: 1100px;
@@ -73,10 +74,10 @@ export default function App() {
   useEffect(() => {
     const cachedRef = ref.current,
       observer = new IntersectionObserver(
-        ([e]) => {
-          setIsSticky(e.intersectionRatio < 1)
+        ([entry]) => {
+          setIsSticky(!entry.isIntersecting)
         },
-        { threshold: [1] }
+        { threshold: [0] }
       )
 
     observer.observe(cachedRef)
@@ -84,7 +85,7 @@ export default function App() {
     return function () {
       observer.unobserve(cachedRef)
     }
-  }, [])
+  }, [ref, setIsSticky])
 
   return (
     <>
@@ -107,17 +108,21 @@ export default function App() {
             Audio Stuff
           </NavLink>
         </Nav>
-        <Switch>
-          <Route path="/software">
-            <Software />
-          </Route>
-          <Route path="/audio">
-            <Audio />
-          </Route>
-          <Route path="/">
-            <Redirect to="/software" />
-          </Route>
-        </Switch>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} classNames="fade" timeout={400}>
+            <Switch>
+              <Route path="/software">
+                <Software />
+              </Route>
+              <Route path="/audio">
+                <Audio />
+              </Route>
+              <Route path="/">
+                <Redirect to="/software" />
+              </Route>
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
       </Container>
       <Footer />
     </>

@@ -1,5 +1,7 @@
+import React from 'react'
 import Project from './Project'
 import styled from 'styled-components'
+import ScrollToTop from './ScrollToTop'
 
 import {
   DiGithubBadge,
@@ -94,7 +96,7 @@ const StyledLinksList = styled.ul`
     font-weight: 500;
     color: var(--pale-green);
     margin: 2rem 4rem;
-    padding: 0 2px 6px 2px;
+    padding: 0 2px;
     border-bottom: 1px solid var(--pale-green);
 
     &:hover {
@@ -157,6 +159,7 @@ const skills = [
 export default function Software() {
   return (
     <>
+      <ScrollToTop />
       <h2 className="visually-hidden">Software Engineer.</h2>
       <StyledProjectsSection>
         <h3>Projects.</h3>

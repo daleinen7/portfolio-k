@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
@@ -6,7 +6,7 @@ import pauseButton from '../static/pause.svg'
 import backInTime from '../static/backInTime.mp3'
 import brightEyed from '../static/brightEyed.mp3'
 import drift from '../static/drift.mp3'
-import { useEffect } from 'react/cjs/react.development'
+import ScrollToTop from './ScrollToTop'
 
 const audioProjects = [
   {
@@ -93,7 +93,7 @@ const SongProgress = styled.span`
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-size: 36px;
-  color: white;
+  /* color: white; */
   padding: 14px;
 `
 
@@ -126,21 +126,35 @@ export default function Audio() {
   const playing = [playingBE, playingBIT, playingD]
   const player = [brightEyed, backInTime, drift]
 
+  const totalSecondsOfSong = duration / 1000
+  const percentageProgress = (audioProgress / totalSecondsOfSong) * 100
+
+  useEffect(() => {
+    console.log('percentageOfProgress = ', percentageProgress)
+  }, [audioProgress])
+
   const songProgress = {
-    background: 'rgb(255,255,255)',
+    // background: 'rgb(255,255,255)',
     // totalSecondsOfSong = duration / 1000
     // percentageProgress = progress / totalSecondsOfSong * 100
-    background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${
-      (audioProgress / (duration / 1000)) * 1000
-    }%, rgba(255,255,255,1) ${
-      (audioProgress / (duration / 1000)) * 1000 + 1
+
+    /////////// PROGRESS ///////////
+    background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${Math.floor(
+      percentageProgress
+    )}%, rgba(255,255,255,1) ${
+      Math.floor(percentageProgress) + 1
     }%, rgba(255,255,255,1) 100%)`,
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
+
+    // background: `linear-gradient(90deg, #eee 0%, #eee 40%, #23626d 41%, #23626d 100%)`,
+    // WebkitBackgroundClip: 'text',
+    // WebkitTextFillColor: 'transparent',
   }
 
   return (
     <>
+      <ScrollToTop />
       <h2 className="visually-hidden">Audio Engineer.</h2>
       <StyledSection>
         <h3>What I can do for you.</h3>
@@ -163,6 +177,7 @@ export default function Audio() {
                   onMouseDown={() => {
                     stop()
                     setSong(player[idx])
+                    setAudioProgress(0)
                   }}
                   onClick={() => {
                     setPlaying.forEach((playingStatus) => {
