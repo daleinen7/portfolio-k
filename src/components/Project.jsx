@@ -68,6 +68,9 @@ const ProjectContainer = styled.article`
           flex-direction: column;
           align-items: flex-end;
           margin: 0 3.75rem 0 0;
+          @media (max-width: 1124px) {
+            margin: 0 1rem 0 0;
+          }
         }
         p {
           text-align: right;

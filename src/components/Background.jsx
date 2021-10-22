@@ -18,7 +18,7 @@ const StyledBackground = styled.div`
     padding-left: 70px;
   }
 
-  @media (max-width: 952px) {
+  @media (max-width: 968px) {
     padding-left: 0;
     width: 300px;
     left: 50%;

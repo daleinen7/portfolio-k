@@ -43,6 +43,10 @@ const Header = styled.header`
     padding-top: 2vh;
   }
 
+  @media (max-width: 680px) {
+    padding-top: 4vh;
+  }
+
   h1 {
     font-size: 6rem;
     font-weight: 400;
