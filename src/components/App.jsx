@@ -13,6 +13,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  main {
+    width: 100%;
+  }
+
   @media (max-width: 952px) {
     width: 90%;
   }

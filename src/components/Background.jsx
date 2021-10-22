@@ -9,9 +9,15 @@ const StyledBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 952px;
   top: calc(${(props) => props.windowHeight - 362}px);
   z-index: -1;
-  width: 80%;
+  margin-left: 80px;
+
+  @media (max-width: 952px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `
 const StyledPortrait = styled.img`
   width: 300px;
