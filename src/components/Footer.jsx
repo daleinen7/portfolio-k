@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  padding: 4rem 1rem 0 1rem;
+  padding: 4rem 1rem 0.5rem 1rem;
   width: 100%;
   color: #999999;
   font-size: 1.125rem;
