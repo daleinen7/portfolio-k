@@ -17,8 +17,12 @@ const Container = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 952px) {
+  @media (max-width: 968px) {
     width: 90%;
+  }
+
+  @media (max-width: 660px) {
+    width: 100%;
   }
 
   .isSticky {
@@ -65,12 +69,17 @@ const Header = styled.header`
 const Nav = styled.nav`
   position: sticky;
   top: 0;
+  margin-top: 24px;
   width: 100%;
   padding: 1rem 5rem;
   font-size: 1.5rem;
   display: flex;
-
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    padding: 1rem 2rem;
+  }
+
   a {
     font-family: 'Roboto Slab', serif;
     color: var(--pale-green);

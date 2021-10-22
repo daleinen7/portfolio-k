@@ -29,6 +29,13 @@ import weirdRadio from '../static/weirdRadio.png'
 const StyledProjectsSection = styled.section`
   h3 {
     margin: 150px 0 0 0;
+    @media (max-width: 968px) {
+      margin: 70px 0 0;
+    }
+  }
+
+  @media (max-width: 968px) {
+    width: 100%;
   }
 `
 
@@ -59,6 +66,10 @@ const StyledTools = styled.section`
   color: white;
   margin: 4rem;
 
+  @media (max-width: 968px) {
+    margin: 0;
+  }
+
   h2,
   h3 {
     text-align: center;
@@ -74,20 +85,33 @@ const StyledTools = styled.section`
     justify-content: space-between;
     width: 45rem;
     height: 10rem;
+    @media (max-width: 968px) {
+      width: 30rem;
+    }
+    @media (max-width: 550px) {
+      width: 20rem;
+      height: 20rem;
+    }
   }
   li {
     font-size: 5rem;
     padding: 0.4rem 1.2rem;
+    @media (max-width: 968px) {
+      font-size: 5rem;
+      padding: 0;
+    }
   }
 `
 
 const StyledAbout = styled.section`
   margin: 660px 0 4rem;
+  padding: 0 2rem;
+
   p {
     font-size: 1.5rem;
   }
 
-  @media (max-width: 952px) {
+  @media (max-width: 968px) {
     margin: 4rem 0;
   }
 `

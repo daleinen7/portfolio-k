@@ -26,6 +26,9 @@ const ProjectContainer = styled.article`
     @media (max-width: 1124px) {
       margin: 0 0 0 1rem;
     }
+    @media (max-width: 968px) {
+      margin: 0;
+    }
   }
 
   h4 {
@@ -54,6 +57,12 @@ const ProjectContainer = styled.article`
   img {
     border: 4px solid var(--green);
     width: 440px;
+    @media (max-width: 968px) {
+      width: 70%;
+    }
+    @media (max-width: 660px) {
+      width: 100%;
+    }
   }
 
   // if project is an odd number have image on left
@@ -70,6 +79,9 @@ const ProjectContainer = styled.article`
           margin: 0 3.75rem 0 0;
           @media (max-width: 1124px) {
             margin: 0 1rem 0 0;
+          }
+          @media (max-width: 968px) {
+            margin: 0;
           }
         }
         p {
