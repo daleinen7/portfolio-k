@@ -9,8 +9,9 @@ const StyledBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: calc(${(props) => props.windowHeight}px / 1.7);
+  top: calc(${(props) => props.windowHeight - 362}px);
   z-index: -1;
+  width: 80%;
 `
 const StyledPortrait = styled.img`
   width: 300px;

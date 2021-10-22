@@ -28,7 +28,7 @@ import weirdRadio from '../static/weirdRadio.png'
 
 const StyledProjectsSection = styled.section`
   h3 {
-    margin: 100px 0 0 0;
+    margin: 150px 0 0 0;
   }
 `
 
@@ -78,7 +78,7 @@ const StyledTools = styled.section`
 `
 
 const StyledAbout = styled.section`
-  margin: 560px 0 4rem;
+  margin: 660px 0 4rem;
   p {
     font-size: 1.5rem;
   }

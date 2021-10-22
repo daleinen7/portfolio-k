@@ -23,13 +23,21 @@ const Container = styled.div`
 `
 
 const Hero = styled.div`
-  height: calc(100vh - 6rem);
+  height: 90vh;
 `
 
 const Header = styled.header`
-  padding-top: calc(44vh - 92px);
+  padding-top: 24vh;
   text-align: center;
   display: block;
+
+  @media (max-height: 842px) {
+    padding-top: 16vh;
+  }
+
+  @media (max-height: 620px) {
+    padding-top: 2vh;
+  }
 
   h1 {
     font-size: 6rem;
@@ -92,7 +100,6 @@ export default function App() {
   return (
     <>
       <Container>
-        <Background location={location} />
         <Hero ref={ref}>
           <Header>
             <h1>
@@ -102,25 +109,28 @@ export default function App() {
             <p role="doc-subtitle">Software Developer, Audio Nerd.</p>
           </Header>
         </Hero>
-        <Nav className={isSticky ? 'isSticky' : ''}>
-          <NavLink to="/software" activeClassName="selected">
-            Software Stuff
-          </NavLink>
-          <NavLink to="/audio" activeClassName="selected">
-            Audio Stuff
-          </NavLink>
-        </Nav>
-        <Switch>
-          <Route path="/software">
-            <Software />
-          </Route>
-          <Route path="/audio">
-            <Audio />
-          </Route>
-          <Route path="/">
-            <Redirect to="/software" />
-          </Route>
-        </Switch>
+        <main>
+          <Background location={location} />
+          <Nav className={isSticky ? 'isSticky' : ''}>
+            <NavLink to="/software" activeClassName="selected">
+              Software Stuff
+            </NavLink>
+            <NavLink to="/audio" activeClassName="selected">
+              Audio Stuff
+            </NavLink>
+          </Nav>
+          <Switch>
+            <Route path="/software">
+              <Software />
+            </Route>
+            <Route path="/audio">
+              <Audio />
+            </Route>
+            <Route path="/">
+              <Redirect to="/software" />
+            </Route>
+          </Switch>
+        </main>
       </Container>
       <Footer />
     </>
