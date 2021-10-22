@@ -4,9 +4,7 @@ import Audio from './Audio'
 import Software from './Software'
 import Background from './Background'
 import Footer from './Footer'
-
 import styled from 'styled-components'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const Container = styled.div`
   max-width: 1100px;
@@ -14,6 +12,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 952px) {
+    width: 90%;
+  }
 
   .isSticky {
     background: #181818;
@@ -108,21 +110,17 @@ export default function App() {
             Audio Stuff
           </NavLink>
         </Nav>
-        <TransitionGroup component={null}>
-          <CSSTransition key={location.key} classNames="fade" timeout={400}>
-            <Switch>
-              <Route path="/software">
-                <Software />
-              </Route>
-              <Route path="/audio">
-                <Audio />
-              </Route>
-              <Route path="/">
-                <Redirect to="/software" />
-              </Route>
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+        <Switch>
+          <Route path="/software">
+            <Software />
+          </Route>
+          <Route path="/audio">
+            <Audio />
+          </Route>
+          <Route path="/">
+            <Redirect to="/software" />
+          </Route>
+        </Switch>
       </Container>
       <Footer />
     </>

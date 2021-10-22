@@ -6,6 +6,20 @@ const ProjectContainer = styled.article`
   flex-direction: row-reverse;
   align-items: center;
 
+  .mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 968px) {
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+  }
+
   .info {
     margin: 0 0 0 3.75rem;
   }
@@ -37,32 +51,44 @@ const ProjectContainer = styled.article`
     border: 4px solid var(--green);
     width: 440px;
   }
+
   // if project is an odd number have image on left
   ${(props) =>
     props.idx % 2 &&
     css`
-      flex-direction: row;
+      @media (min-width: 968px) {
+        flex-direction: row;
 
-      .info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin: 0 3.75rem 0 0;
-      }
-      p {
-        text-align: right;
-      }
-      a {
-        display: block;
-        text-align: right;
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin: 0 3.75rem 0 0;
+        }
+        p {
+          text-align: right;
+        }
+        a {
+          display: block;
+          text-align: right;
+        }
       }
     `}
 `
 export default function Project({ title, description, idx, img, site }) {
+  const Image = (props) => (
+    <img
+      src={img}
+      className={props.mobile ? 'mobile' : 'desktop'}
+      alt={title}
+    />
+  )
+
   return (
     <ProjectContainer idx={idx}>
       <div className="info">
         <h4>{title}</h4>
+        <Image mobile={true} />
         <p className="green">{description}</p>
         <a
           href={site}
@@ -74,8 +100,7 @@ export default function Project({ title, description, idx, img, site }) {
           Check it out &rarr;
         </a>
       </div>
-
-      <img src={img} alt={title} />
+      <Image mobile={false} />
     </ProjectContainer>
   )
 }

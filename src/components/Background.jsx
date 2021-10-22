@@ -19,6 +19,10 @@ const Line = styled.img`
   position: relative;
   right: 124px;
   top: -2px;
+
+  @media screen and (max-width: 968px) {
+    display: none;
+  }
 `
 export default function Background({ location }) {
   const [windowHeight, setWindowHeight] = useState()

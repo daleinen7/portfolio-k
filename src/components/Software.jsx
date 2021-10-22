@@ -6,21 +6,12 @@ import ScrollToTop from './ScrollToTop'
 import {
   DiGithubBadge,
   DiCss3,
-  // DiHeroku,
-  // DiDjango,
   DiHtml5,
   DiJsBadge,
-  // DiLinux,
-  // DiMarkdown,
   DiMongodb,
   DiNodejsSmall,
-  // DiMysql,
   DiNpm,
-  // DiPython,
-  // DiPhotoshop,
-  // DiPhp,
   DiPostgresql,
-  // DiRor,
   DiSass,
   DiReact,
 } from 'react-icons/di'
@@ -48,6 +39,14 @@ const StyledProjectsList = styled.ul`
   li {
     &:not(:last-child) {
       margin-bottom: 15rem;
+    }
+  }
+
+  @media (max-width: 968px) {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
     }
   }
 `
@@ -83,19 +82,25 @@ const StyledAbout = styled.section`
   p {
     font-size: 1.5rem;
   }
+
+  @media (max-width: 952px) {
+    margin: 4rem 0;
+  }
 `
 
 const StyledLinksList = styled.ul`
-  margin: 4rem;
+  margin: 4rem 0;
+  padding: 0;
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
 
   a {
     font-size: 2.25rem;
     font-weight: 500;
     color: var(--pale-green);
-    margin: 2rem 4rem;
+    margin: 2rem 0;
     padding: 0 2px;
     border-bottom: 1px solid var(--pale-green);
 
@@ -134,26 +139,15 @@ const skills = [
   <DiGithubBadge />,
   <DiHtml5 />,
   <DiReact />,
-  // <DiHeroku />,
-  // <DiDjango />,
   <DiJsBadge />,
-  // <DiLinux />,
-  // <DiMarkdown />,
   <DiMongodb />,
   <DiCss3 />,
   <DiNodejsSmall />,
-  // <DiMysql />,
   <DiNpm />,
-  // <DiPython />,
-  // <DiPhotoshop />,
-  // <DiPhp />,
   <DiPostgresql />,
-  // <DiRor />,
   <DiSass />,
   <IoAccessibilitySharp />,
   <GrGatsbyjs />,
-  // <SiNextDotJs />,
-  // <SiNetlify />,
 ].map((skill, idx) => <li key={idx}>{skill}</li>)
 
 export default function Software() {
