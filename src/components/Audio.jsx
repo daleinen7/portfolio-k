@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import useSound from 'use-sound'
 import styled from 'styled-components'
 import playButton from '../static/play.png'
@@ -128,10 +128,6 @@ export default function Audio() {
 
   const totalSecondsOfSong = duration / 1000
   const percentageProgress = (audioProgress / totalSecondsOfSong) * 100
-
-  useEffect(() => {
-    console.log('percentageOfProgress = ', percentageProgress)
-  }, [audioProgress])
 
   const songProgress = {
     // background: 'rgb(255,255,255)',
