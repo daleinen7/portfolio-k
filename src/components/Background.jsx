@@ -12,10 +12,14 @@ const StyledBackground = styled.div`
   width: 952px;
   top: calc(${(props) => props.windowHeight - 362}px);
   z-index: -1;
-  margin-left: 80px;
+  padding-left: 80px;
+
+  @media (max-width: 1032px) {
+    width: 100%;
+  }
 
   @media (max-width: 952px) {
-    margin-left: 0;
+    padding-left: 0;
     width: 100%;
   }
 `
