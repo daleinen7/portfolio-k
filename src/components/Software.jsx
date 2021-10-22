@@ -42,6 +42,10 @@ const StyledProjectsList = styled.ul`
     }
   }
 
+  @media (max-width: 1124px) {
+    padding: 20px 10px;
+  }
+
   @media (max-width: 968px) {
     li {
       &:not(:last-child) {

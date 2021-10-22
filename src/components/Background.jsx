@@ -12,15 +12,17 @@ const StyledBackground = styled.div`
   width: 952px;
   top: calc(${(props) => props.windowHeight - 362}px);
   z-index: -1;
-  padding-left: 80px;
+  padding-left: 180px;
 
-  @media (max-width: 1032px) {
-    width: 100%;
+  @media (max-width: 1016px) {
+    padding-left: 70px;
   }
 
   @media (max-width: 952px) {
     padding-left: 0;
-    width: 100%;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
   }
 `
 const StyledPortrait = styled.img`

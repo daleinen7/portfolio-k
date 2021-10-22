@@ -22,6 +22,10 @@ const ProjectContainer = styled.article`
 
   .info {
     margin: 0 0 0 3.75rem;
+
+    @media (max-width: 1124px) {
+      margin: 0 0 0 1rem;
+    }
   }
 
   h4 {
