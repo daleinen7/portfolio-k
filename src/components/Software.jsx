@@ -176,7 +176,9 @@ const skills = [
   <DiSass />,
   <IoAccessibilitySharp />,
   <GrGatsbyjs />,
-].map((skill, idx) => <li key={idx}>{skill}</li>)
+].map((skill, idx) => {
+  return <li key={idx}>{skill}</li>
+})
 
 export default function Software() {
   return (

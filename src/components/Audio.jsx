@@ -34,7 +34,12 @@ const audioProjects = [
 
 const StyledSection = styled.section`
   text-align: left;
-  width: 750px;
+  max-width: 750px;
+  margin-left: 9rem;
+
+  @media (max-width: 968px) {
+    margin: 0 2rem;
+  }
 
   h3 {
     font-size: 3.625rem;
@@ -74,7 +79,11 @@ const StyledSection = styled.section`
   }
 
   &:first-of-type {
-    margin-top: 510px;
+    margin-top: 560px;
+
+    @media (max-width: 968px) {
+      margin-top: 70px;
+    }
   }
 
   .playerControls {
