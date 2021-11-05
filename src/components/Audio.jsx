@@ -58,6 +58,17 @@ const StyledSection = styled.section`
     font-family: 'Roboto slab', serif;
   }
 
+  a {
+    font-family: 'Roboto slab', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: underline;
+    color: white;
+    &:hover {
+      font-style: italic;
+    }
+  }
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -139,11 +150,6 @@ export default function Audio() {
   const percentageProgress = (audioProgress / totalSecondsOfSong) * 100
 
   const songProgress = {
-    // background: 'rgb(255,255,255)',
-    // totalSecondsOfSong = duration / 1000
-    // percentageProgress = progress / totalSecondsOfSong * 100
-
-    /////////// PROGRESS ///////////
     backgroundImage: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) ${Math.floor(
       percentageProgress
     )}%, rgba(255,255,255,1) ${
@@ -151,10 +157,6 @@ export default function Audio() {
     }%, rgba(255,255,255,1) 100%)`,
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-
-    // background: `linear-gradient(90deg, rgba(206,249,136,1) 0%, rgba(206,249,136,1) 40%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 100%)`,
-    // WebkitBackgroundClip: 'text',
-    // WebkitTextFillColor: 'transparent',
   }
 
   return (
@@ -216,6 +218,10 @@ export default function Audio() {
           Framing or Software Engineering, I enjoy discovering the the best way
           to make art tangible.
         </p>
+      </StyledSection>
+      <StyledSection>
+        <h3>Contact me.</h3>
+        <a href="mailto:daleinen@gmail.com">daleinen@gmail.com</a>
       </StyledSection>
     </>
   )
