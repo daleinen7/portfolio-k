@@ -2,6 +2,7 @@ import React from 'react'
 import Project from './Project'
 import styled from 'styled-components'
 import ScrollToTop from './ScrollToTop'
+import Skill from './Skill'
 
 import {
   DiGithubBadge,
@@ -164,20 +165,67 @@ const projects = [
 ]
 
 const skills = [
-  <DiGithubBadge />,
-  <DiHtml5 />,
-  <DiReact />,
-  <DiJsBadge />,
-  <DiMongodb />,
-  <DiCss3 />,
-  <DiNodejsSmall />,
-  <DiNpm />,
-  <DiPostgresql />,
-  <DiSass />,
-  <IoAccessibilitySharp />,
-  <GrGatsbyjs />,
-].map((skill, idx) => {
-  return <li key={idx}>{skill}</li>
+  {
+    skill: <DiGithubBadge />,
+    title: 'Github',
+    description: "I frequently have to troubleshoot student's git errors.",
+  },
+  {
+    skill: <DiHtml5 />,
+    title: 'HTML',
+    description: 'I pride myself in writing semantic markup.',
+  },
+  {
+    skill: <DiReact />,
+    title: 'React',
+    description: 'In fact this site is built in React!',
+  },
+  {
+    skill: <DiJsBadge />,
+    title: 'Javascript',
+    description: "It's important to know the fundamentals",
+  },
+  {
+    skill: <DiMongodb />,
+    title: 'MongoDB',
+    description: 'A non-relational database.',
+  },
+  { skill: <DiCss3 />, title: 'CSS' },
+  {
+    skill: <DiNodejsSmall />,
+    title: 'NodeJS',
+    description:
+      'Javascript on the server side. Most of my experience is through Express',
+  },
+  { skill: <DiNpm />, title: 'NPM' },
+  {
+    skill: <DiPostgresql />,
+    title: 'PostgreSQL',
+    description: 'Relational Database',
+  },
+  { skill: <DiSass />, title: 'SASS', description: 'Preprocessor for CSS' },
+  {
+    skill: <IoAccessibilitySharp />,
+    title: 'A11y or Accessibility',
+    description:
+      'I feel very strongly the web should be accessible to everyone.',
+  },
+  {
+    skill: <GrGatsbyjs />,
+    title: 'GatsbyJS',
+    description:
+      'Static Site Generator built on React. Most of my production level projects have been built with Gatsby.',
+  },
+].map((skill, idx, arr) => {
+  return (
+    <Skill
+      skill={skill.skill}
+      title={skill.title}
+      description={skill.description}
+      top={idx < arr.length / 2}
+      key={idx}
+    />
+  )
 })
 
 export default function Software() {
