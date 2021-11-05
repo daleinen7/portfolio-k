@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Reveal = styled.aside`
   position: absolute;
-  margin-top: ${(props) => (props.top ? '-140px' : '120px')};
+  margin-top: ${(props) => (props.top ? '-120px' : '110px')};
   width: clamp(8rem, 12rem, 24%);
   margin-left: clamp(-4rem, -6rem, -12%);
   font-size: 1rem;
