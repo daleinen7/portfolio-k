@@ -168,12 +168,12 @@ const skills = [
   {
     skill: <DiGithubBadge />,
     title: 'Github',
-    description: "I frequently have to troubleshoot student's git errors.",
+    description: "I frequently troubleshoot student's git errors.",
   },
   {
     skill: <DiHtml5 />,
     title: 'HTML',
-    description: 'I pride myself in writing semantic markup.',
+    description: 'I believe semantic markup is important.',
   },
   {
     skill: <DiReact />,
@@ -188,22 +188,34 @@ const skills = [
   {
     skill: <DiMongodb />,
     title: 'MongoDB',
-    description: 'A non-relational database.',
+    description: "Non-Relational Database. I've also used Mongoose.",
   },
-  { skill: <DiCss3 />, title: 'CSS' },
+  {
+    skill: <DiCss3 />,
+    title: 'CSS',
+    description: 'I have 10 years experience with CSS.',
+  },
   {
     skill: <DiNodejsSmall />,
     title: 'NodeJS',
     description:
       'Javascript on the server side. Most of my experience is through Express',
   },
-  { skill: <DiNpm />, title: 'NPM' },
+  {
+    skill: <DiNpm />,
+    title: 'NPM',
+    description: 'Node Package Manager. A package manager I use.',
+  },
   {
     skill: <DiPostgresql />,
     title: 'PostgreSQL',
-    description: 'Relational Database',
+    description: 'Relational Database. I enjoy writing ERDs for databases.',
   },
-  { skill: <DiSass />, title: 'SASS', description: 'Preprocessor for CSS' },
+  {
+    skill: <DiSass />,
+    title: 'SASS',
+    description: 'These days I use SASS more often than vanilla CSS.',
+  },
   {
     skill: <IoAccessibilitySharp />,
     title: 'A11y or Accessibility',
