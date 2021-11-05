@@ -243,7 +243,7 @@ const skills = [
 export default function Software() {
   return (
     <>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <h2 className="visually-hidden">Software Engineer.</h2>
       <StyledProjectsSection>
         <h3>Projects.</h3>
