@@ -168,7 +168,7 @@ const skills = [
   {
     skill: <DiGithubBadge />,
     title: 'Github',
-    description: "I frequently troubleshoot student's git errors.",
+    description: "I frequently troubleshoot students' GitHub woes.",
   },
   {
     skill: <DiHtml5 />,
@@ -183,23 +183,23 @@ const skills = [
   {
     skill: <DiJsBadge />,
     title: 'Javascript',
-    description: "It's important to know the fundamentals",
+    description: "It's important to know the fundamentals.",
   },
   {
     skill: <DiMongodb />,
     title: 'MongoDB',
-    description: "Non-Relational Database. I've also used Mongoose.",
+    description: "Non-Relational Database. I also use Mongoose.",
   },
   {
     skill: <DiCss3 />,
     title: 'CSS',
-    description: 'I have 10 years experience with CSS.',
+    description: 'I have 10 years of experience with CSS.',
   },
   {
     skill: <DiNodejsSmall />,
     title: 'NodeJS',
     description:
-      'Javascript on the server side. Most of my experience is through Express',
+      'Javascript on the server side. Most of my experience is through Express.',
   },
   {
     skill: <DiNpm />,
