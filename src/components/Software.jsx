@@ -167,7 +167,7 @@ const projects = [
 const skills = [
   {
     skill: <DiGithubBadge />,
-    title: 'Github',
+    title: 'GitHub',
     description: "I frequently troubleshoot students' GitHub woes.",
   },
   {
@@ -178,17 +178,17 @@ const skills = [
   {
     skill: <DiReact />,
     title: 'React',
-    description: 'In fact this site is built in React!',
+    description: 'In fact, this site is built in React!',
   },
   {
     skill: <DiJsBadge />,
-    title: 'Javascript',
+    title: 'JavaScript',
     description: "It's important to know the fundamentals.",
   },
   {
     skill: <DiMongodb />,
     title: 'MongoDB',
-    description: "Non-Relational Database. I also use Mongoose.",
+    description: "Non-Relational database. I also use Mongoose.",
   },
   {
     skill: <DiCss3 />,
@@ -209,7 +209,7 @@ const skills = [
   {
     skill: <DiPostgresql />,
     title: 'PostgreSQL',
-    description: 'Relational Database. I enjoy writing ERDs for databases.',
+    description: 'Relational database. I enjoy writing ERDs for databases.',
   },
   {
     skill: <DiSass />,
@@ -220,7 +220,7 @@ const skills = [
     skill: <IoAccessibilitySharp />,
     title: 'A11y or Accessibility',
     description:
-      'I feel very strongly the web should be accessible to everyone.',
+      'I feel very strongly that the web should be accessible to everyone.',
   },
   {
     skill: <GrGatsbyjs />,
@@ -243,10 +243,9 @@ const skills = [
 export default function Software() {
   return (
     <>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <h2 className="visually-hidden">Software Engineer.</h2>
       <StyledProjectsSection>
-        <h3>Projects.</h3>
         <StyledProjectsList>
           {projects.map((project, idx) => {
             return (

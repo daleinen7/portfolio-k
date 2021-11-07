@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledListItem = styled.li`
-  transition: color 0.6s;
+  transition: color 0.3s;
   &:hover {
     color: var(--green);
   }
