@@ -11,6 +11,15 @@ const StyledFooter = styled.footer`
   font-family: 'Roboto', sans-serif;
   a {
     color: #999999;
+    &:hover {
+      color: var(--pale-green);
+    }
+  }
+
+  @media(max-width: 570px) {
+    padding-top: 0;
+    text-align: center;
+    font-size: 0.9rem;
   }
 `
 
