@@ -41,6 +41,7 @@ const StyledProjectsSection = styled.section`
 `
 
 const StyledProjectsList = styled.ul`
+  margin-top: 230px;
   list-style-type: none;
   padding: 20px 0;
 
