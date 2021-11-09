@@ -139,6 +139,15 @@ const StyledLinksList = styled.ul`
       font-style: italic;
     }
   }
+
+  @media(max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+    
+    li {
+      margin: 1rem auto;
+    }
+  }
 `
 
 const projects = [
