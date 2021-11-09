@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { DiGithubBadge } from 'react-icons/di'
 
 const ProjectContainer = styled.article`
   display: flex;
@@ -43,7 +44,7 @@ const ProjectContainer = styled.article`
     color: var(--pale-green);
   }
 
-  a {
+  a.check-it-out {
     font-size: 2.25rem;
     font-weight: 500;
     text-decoration: none;
@@ -51,6 +52,14 @@ const ProjectContainer = styled.article`
     border-bottom: 1px solid var(--pale-green);
     &:hover {
       font-style: italic;
+    }
+  }
+
+  a.git {
+    font-size: 4rem;
+    color: white;
+    &:hover {
+      color: var(--pale-green);
     }
   }
 
@@ -94,7 +103,7 @@ const ProjectContainer = styled.article`
       }
     `}
 `
-export default function Project({ title, description, idx, img, site }) {
+export default function Project({ title, description, gitLink, idx, img, site }) {
   const Image = (props) => (
     <img
       src={img}
@@ -111,13 +120,16 @@ export default function Project({ title, description, idx, img, site }) {
         <p className="green">{description}</p>
         <a
           href={site}
-          className="green"
+          className="green check-it-out"
           target="_blanks"
           rel="noopener noreferrer"
         >
           {' '}
           Check it out &rarr;
         </a>
+        <div className="tech">
+          <a href={gitLink} className="git"><DiGithubBadge /></a>
+        </div>
       </div>
       <Image mobile={false} />
     </ProjectContainer>

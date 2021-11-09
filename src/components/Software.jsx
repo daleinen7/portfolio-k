@@ -145,6 +145,7 @@ const projects = [
   {
     title: 'Candy Fluffs',
     site: 'https://candyfluffs.com',
+    gitLink: 'https://github.com/daleinen7/candyfluffs',
     description:
       'My client needed an affordable, quick, and easy solution. Gatsby and Jamstack delivered on all counts and more.',
     img: candyFluffs,
@@ -152,6 +153,7 @@ const projects = [
   {
     title: 'Bearcabulary',
     site: 'https://bearcabulary.com',
+    gitLink: 'https://github.com/daleinen7/bearcabulary',
     description:
       'Originally built in a 3 day hack-a-thon, some of the team re-imagined the project in Gatsby and NetlifyCMS to be open source and extensible.',
     img: bearcabulary,
@@ -159,6 +161,7 @@ const projects = [
   {
     title: 'Weird Radio',
     site: 'https://weirdradio.netlify.app',
+    gitLink: 'https://github.com/daleinen7/weird-radio',
     description:
       'An internet radio station promoting experimental music from the West Coast. A project where I have full control of the tech side and collaborate with two designers to bring the product to reality. Currently a work in progress.',
     img: weirdRadio,
@@ -254,6 +257,7 @@ export default function Software() {
                 <Project
                   title={project.title}
                   description={project.description}
+                  gitLink={project.gitLink}
                   idx={idx}
                   site={project.site}
                   img={project.img}
