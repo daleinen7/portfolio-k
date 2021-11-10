@@ -30,7 +30,7 @@ const ProjectContainer = styled.article`
     }
   }
 
-  h4 {
+  h3 {
     font-size: 3.5rem;
     margin: 0 0 1rem 0;
   }
@@ -113,7 +113,7 @@ export default function Project({ title, description, gitLink, idx, img, site })
   return (
     <ProjectContainer idx={idx}>
       <div className="info">
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         <Image mobile={true} />
         <p className="green">{description}</p>
         <a
