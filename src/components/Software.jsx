@@ -26,6 +26,8 @@ import bearcabulary from '../static/bearcabulary.png'
 import weirdRadio from '../static/weirdRadio.png'
 
 // import { SiNextDotJs, SiNetlify } from 'react-icons/si'
+import resume from '../static/Doug_Leinen-Resume.pdf'
+
 
 const StyledProjectsSection = styled.section`
   h3 {
@@ -294,7 +296,7 @@ export default function Software() {
       <StyledLinksList>
         <li>
           <a
-            href="https://www.dougleinen.com/Doug_Leinen-Resume.pdf"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
           >
