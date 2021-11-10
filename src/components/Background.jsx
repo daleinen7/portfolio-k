@@ -50,7 +50,7 @@ export default function Background({ location }) {
       {location.pathname === '/audio' ? (
         <Line src={audioLine} alt="audio cable drawing" />
       ) : (
-        <Line src={softwareLine} />
+        <Line src={softwareLine} alt="parker jotter drawing"/>
       )}
     </StyledBackground>
   )
