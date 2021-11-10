@@ -127,9 +127,6 @@ export default function Project({ title, description, gitLink, idx, img, site })
           {' '}
           Check it out &rarr;
         </a>
-        <div className="tech">
-          <a href={gitLink} className="git"><DiGithubBadge /></a>
-        </div>
       </div>
       <Image mobile={false} />
     </ProjectContainer>
