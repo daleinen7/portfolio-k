@@ -1,7 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { DiGithubBadge } from 'react-icons/di'
-
 const ProjectContainer = styled.article`
   display: flex;
   flex-direction: row-reverse;
