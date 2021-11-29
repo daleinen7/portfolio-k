@@ -32,7 +32,6 @@ const ProjectContainer = styled.article`
 
   h3 {
     font-size: 3.5rem;
-    margin: 0 0 1rem 0;
   }
 
   p {
@@ -101,7 +100,14 @@ const ProjectContainer = styled.article`
       }
     `}
 `
-export default function Project({ title, description, gitLink, idx, img, site }) {
+export default function Project({
+  title,
+  description,
+  gitLink,
+  idx,
+  img,
+  site,
+}) {
   const Image = (props) => (
     <img
       src={img}

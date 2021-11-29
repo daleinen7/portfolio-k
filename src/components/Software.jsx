@@ -30,8 +30,10 @@ import resume from '../static/Doug_Leinen-Resume.pdf'
 
 const StyledProjectsSection = styled.section`
   h3 {
-    margin: 150px 0 0 0;
+    margin: 0 0 1rem 0;
+
     @media (max-width: 968px) {
+      text-align: left;
       margin: 70px 0 0;
     }
   }
