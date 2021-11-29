@@ -28,7 +28,6 @@ import weirdRadio from '../static/weirdRadio.png'
 // import { SiNextDotJs, SiNetlify } from 'react-icons/si'
 import resume from '../static/Doug_Leinen-Resume.pdf'
 
-
 const StyledProjectsSection = styled.section`
   h3 {
     margin: 150px 0 0 0;
@@ -43,7 +42,7 @@ const StyledProjectsSection = styled.section`
 `
 
 const StyledProjectsList = styled.ul`
-  margin-top: 230px;
+  margin-top: 190px;
   list-style-type: none;
   padding: 20px 0;
 
@@ -142,10 +141,10 @@ const StyledLinksList = styled.ul`
     }
   }
 
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     flex-direction: column;
     justify-content: center;
-    
+
     li {
       margin: 1rem auto;
     }
@@ -203,7 +202,7 @@ const skills = [
   {
     skill: <DiMongodb />,
     title: 'MongoDB',
-    description: "Non-Relational database. I also use Mongoose.",
+    description: 'Non-Relational database. I also use Mongoose.',
   },
   {
     skill: <DiCss3 />,
@@ -295,11 +294,7 @@ export default function Software() {
 
       <StyledLinksList>
         <li>
-          <a
-            href={resume}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={resume} target="_blank" rel="noopener noreferrer">
             Resume
           </a>
         </li>
