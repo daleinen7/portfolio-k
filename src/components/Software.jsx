@@ -59,6 +59,7 @@ const StyledProjectsList = styled.ul`
   }
 
   @media (max-width: 968px) {
+    margin-top: 0;
     li {
       &:not(:last-child) {
         margin-bottom: 4rem;
