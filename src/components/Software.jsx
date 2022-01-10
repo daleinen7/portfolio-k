@@ -78,7 +78,6 @@ const StyledTools = styled.section`
 
   h2,
   h3 {
-    text-align: center;
     margin: 20px 0;
   }
 

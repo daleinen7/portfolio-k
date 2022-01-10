@@ -19,7 +19,7 @@ const audioProjects = [
   {
     artist: 'Indigo',
     description:
-      'Mastered: A laid back tune where I mostly just controlled the low-mids to make sure th easy going bass and vocals worked well together. Finished in a single day.',
+      'Mastered: A laid back tune where I mostly just controlled the low-mids to make sure the easy going bass and vocals worked well together. Finished in a single day.',
     audio: backInTime,
     song: 'Back In Time (feat. Willow Newman)',
   },

@@ -32,6 +32,7 @@ const ProjectContainer = styled.article`
 
   h3 {
     font-size: 3.5rem;
+    text-align: left;
   }
 
   p {
